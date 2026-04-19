@@ -74,22 +74,22 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="lg:hidden bg-white/95 backdrop-blur-md border-b border-[#3f63ad]/15 px-6 py-4 shadow-sm">
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col items-center gap-3 text-center">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block text-[#5a6a8a] hover:text-[#3f63ad] transition-colors font-mono text-sm"
+                  className="block py-1.5 text-[#5a6a8a] hover:text-[#3f63ad] transition-colors font-mono text-sm"
                 >
                   {link.label}
                 </a>
               </li>
             ))}
-            <li>
+            <li className="pt-1">
               <a
                 href="https://drive.google.com/uc?export=download&id=1zDVswAt8YAlNMjtp9UqqeGmSqsbNM4OM"
-                className="inline-flex items-center px-4 py-1.5 border border-[#3f63ad] text-[#3f63ad] text-sm font-mono rounded hover:bg-[#3f63ad] hover:text-white transition-colors"
+                className="inline-flex items-center justify-center px-4 py-1.5 border border-[#3f63ad] text-[#3f63ad] text-sm font-mono rounded hover:bg-[#3f63ad] hover:text-white transition-colors"
               >
                 Resume
               </a>

@@ -1,6 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
+
+const PROFILE_IMAGE =
+  "https://media.licdn.com/dms/image/v2/D4D03AQF3dx5KKoT0dA/profile-displayphoto-shrink_400_400/B4DZUuD8wBHIAg-/0/1740234542669?e=1778112000&v=beta&t=O1HQsmXjafrUxaG3YEwfCjaxwa6uz0li6XbXfesg8tw";
 
 const roles = [
   "Applied Research Engineer",
@@ -50,6 +54,20 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#6b8ec4]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 text-center">
+        {/* Profile photo */}
+        <div className="flex justify-center mb-8">
+          <div className="relative h-32 w-32 sm:h-36 sm:w-36 md:h-40 md:w-40 rounded-full overflow-hidden ring-4 ring-[#3f63ad]/20 ring-offset-4 ring-offset-[#f5f8ff] shadow-lg shadow-[#3f63ad]/15">
+            <Image
+              src={PROFILE_IMAGE}
+              alt="Muhammad Shaheer Luqman"
+              fill
+              className="object-cover object-top"
+              priority
+              sizes="(max-width: 768px) 128px, 160px"
+            />
+          </div>
+        </div>
+
         {/* Greeting */}
         <p className="font-mono text-[#3f63ad] text-sm mb-4 tracking-widest uppercase">
           Hello, I&apos;m
@@ -57,10 +75,11 @@ export default function Hero() {
 
         {/* Name */}
         <h1 className="text-5xl md:text-7xl font-bold text-[#1a2744] mb-4 tracking-tight">
-          Muhammad Shaheer{" "}
+          Muhammad{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3f63ad] to-[#6b8ec4]">
-            Luqman
-          </span>
+            Shaheer
+          </span>{" "}
+          Luqman
         </h1>
 
         {/* Typing Role */}
