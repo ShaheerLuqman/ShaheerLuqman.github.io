@@ -1,7 +1,7 @@
 const highlights = [
   { label: "Company", value: "Retrocausal (US-based)" },
   { label: "Focus", value: "Applied AI & Computer Vision" },
-  { label: "ICPC", value: "Gold + Bronze Medalist" },
+  { label: "ICPC", value: "Gold Medalist" },
   { label: "CGPA", value: "3.90 / 4.00 — FAST NUCES" },
   { label: "Research", value: "IEEE Xplore Published" },
   { label: "Modules Owned", value: "16+ at Retrocausal" },

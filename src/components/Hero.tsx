@@ -99,10 +99,9 @@ export default function Hero() {
         {/* Key Badges */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {[
-            "🥇 ICPC Gold Medalist",
-            "🥉 ICPC Bronze Medalist",
             "💼 Applied Research Engineer @ Retrocausal",
             "📄 IEEE Xplore Published",
+            "🥇 ICPC Gold Medalist",
             "🎓 CGPA 3.90 / 4.00",
           ].map((badge) => (
             <span
