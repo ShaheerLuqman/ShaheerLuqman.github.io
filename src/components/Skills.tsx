@@ -4,9 +4,9 @@ const skillGroups = [
     icon: "🧠",
     skills: [
       "PyTorch", "Scikit-learn", "Hugging Face",
-      "Computer Vision (YOLO, MediaPipe)",
-      "Diffusion Models (Stable Diffusion)",
-      "NLP (BERT, Whisper, 11Labs)",
+      "Computer Vision: YOLO, MediaPipe",
+      "Diffusion Models: Stable Diffusion",
+      "NLP: BERT, Whisper, 11Labs",
       "LLM Prompt Engineering",
     ],
   },
@@ -16,19 +16,24 @@ const skillGroups = [
     skills: [
       "Backend: Django, Flask, FastAPI, Express.js",
       "Frontend: React, Next.js, Vue",
-      "Databases: MySQL, MongoDB, Oracle",
+      "APIs: REST APIs, GraphQL",
+      "Testing & API Tools: Postman",
+      "Databases: MySQL, MongoDB, Oracle SQL, PostgreSQL",
+      "Cloud: AWS, RunPod",
+      "Architecture: System Design",
     ],
   },
   {
     category: "Systems & Tools",
     icon: "⚙️",
     skills: [
-      "Selenium (Web Automation)",
-      "NumPy, Matplotlib",
+      "Selenium: Web Automation",
       "Arduino Programming",
       "Assembly Language",
+      "IoT Systems",
       "Git & Version Control",
       "Linux",
+      "Docker",
     ],
   },
   {
@@ -36,11 +41,6 @@ const skillGroups = [
     icon: "{ }",
     skills: ["Python", "C / C++", "JavaScript"],
   },
-];
-
-const alsoFamiliar = [
-  "Docker", "REST APIs", "Data Analysis", "Experimental Design",
-  "Technical Writing", "System Design", "IoT", "Data Structures & Algorithms",
 ];
 
 export default function Skills() {
@@ -52,6 +52,10 @@ export default function Skills() {
             What I Know
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#1a2744]">Skills</h2>
+          <p className="mt-4 w-full text-pretty text-[#5a6a8a] text-sm md:text-base leading-relaxed">
+            These are core skills I actively use, but they are not the limit of what I can work on.
+            I am an avid learner and always open to tackling new technologies and skill areas.
+          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -80,22 +84,6 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Also familiar with */}
-        <div className="mt-12 pt-8 border-t border-[#3f63ad]/10">
-          <p className="text-center font-mono text-xs text-[#98b3d9] tracking-widest uppercase mb-6">
-            Also familiar with
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {alsoFamiliar.map((item) => (
-              <span
-                key={item}
-                className="px-3 py-1.5 border border-[#3f63ad]/20 text-[#5a6a8a] text-xs font-mono rounded-md hover:border-[#3f63ad]/50 hover:text-[#3f63ad] hover:bg-[#e8eef7] transition-colors"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

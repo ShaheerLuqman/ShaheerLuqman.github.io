@@ -12,6 +12,7 @@ const projects = [
     tech: ["React", "Flask", "Stable Diffusion", "GenAI", "Python"],
     tag: "GenAI",
     tagStyle: "bg-purple-50 border-purple-200 text-purple-600",
+    githubLink: "https://github.com/your-username/repo-name",
   },
   {
     title: "Video Activity Recognition System",
@@ -26,6 +27,7 @@ const projects = [
     tech: ["PyTorch", "MediaPipe", "Computer Vision", "VLMs", "Python"],
     tag: "Production",
     tagStyle: "bg-[#3f63ad]/10 border-[#3f63ad]/30 text-[#3f63ad]",
+    githubLink: "https://github.com/your-username/repo-name",
   },
   {
     title: "Full-Stack Web Applications",
@@ -40,6 +42,7 @@ const projects = [
     tech: ["MongoDB", "Express.js", "React", "Node.js", "JavaScript"],
     tag: "Lead",
     tagStyle: "bg-emerald-50 border-emerald-200 text-emerald-600",
+    githubLink: "https://github.com/your-username/repo-name",
   },
   {
     title: "Crypto Trading Simulator",
@@ -54,6 +57,7 @@ const projects = [
     tech: ["MongoDB", "Express.js", "React", "Node.js", "Ant Design"],
     tag: "MERN",
     tagStyle: "bg-amber-50 border-amber-200 text-amber-600",
+    githubLink: "https://github.com/your-username/repo-name",
   },
   {
     title: "VQ-VAE / RVQ / HVQ Research",
@@ -68,6 +72,7 @@ const projects = [
     tech: ["PyTorch", "Deep Learning", "Representation Learning", "VQ-VAE"],
     tag: "Research",
     tagStyle: "bg-slate-100 border-slate-300 text-slate-600",
+    githubLink: "https://github.com/your-username/repo-name",
   },
   {
     title: "IoT Child Safety Surveillance",
@@ -82,6 +87,7 @@ const projects = [
     tech: ["IoT", "Python", "Arduino", "AI", "Anomaly Detection"],
     tag: "📄 IEEE",
     tagStyle: "bg-emerald-50 border-emerald-200 text-emerald-600",
+    githubLink: "https://github.com/your-username/repo-name",
   },
 ];
 
@@ -124,6 +130,17 @@ export default function Projects() {
                   </li>
                 ))}
               </ul>
+
+              {project.githubLink && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mb-4 text-xs font-mono text-[#3f63ad] hover:text-[#2e4a84] underline underline-offset-2"
+                >
+                  View GitHub
+                </a>
+              )}
 
               <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-[#3f63ad]/10">
                 {project.tech.map((t) => (

@@ -58,37 +58,6 @@ export default function About() {
             ))}
           </div>
         </div>
-
-        {/* Code snippet */}
-        <div className="mt-12 bg-[#1a2744] border border-[#2e4a84] rounded-xl p-5 font-mono text-xs shadow-lg max-w-xl">
-          <div className="flex gap-2 mb-3">
-            <span className="w-3 h-3 rounded-full bg-red-400/70" />
-            <span className="w-3 h-3 rounded-full bg-yellow-400/70" />
-            <span className="w-3 h-3 rounded-full bg-green-400/70" />
-          </div>
-          <p className="text-slate-400">
-            <span className="text-purple-400">const</span>{" "}
-            <span className="text-[#6b8ec4]">shaheer</span>{" "}
-            <span className="text-slate-300">= {"{"}</span>
-          </p>
-          <p className="pl-4 text-slate-400">
-            <span className="text-blue-300">role</span><span className="text-slate-300">:</span>{" "}
-            <span className="text-green-300">&apos;Applied Research Engineer&apos;</span><span className="text-slate-500">,</span>
-          </p>
-          <p className="pl-4 text-slate-400">
-            <span className="text-blue-300">company</span><span className="text-slate-300">:</span>{" "}
-            <span className="text-green-300">&apos;Retrocausal&apos;</span><span className="text-slate-500">,</span>
-          </p>
-          <p className="pl-4 text-slate-400">
-            <span className="text-blue-300">icpc</span><span className="text-slate-300">:</span>{" "}
-            <span className="text-green-300">&apos;Gold Medalist 🥇&apos;</span><span className="text-slate-500">,</span>
-          </p>
-          <p className="pl-4 text-slate-400">
-            <span className="text-blue-300">cgpa</span><span className="text-slate-300">:</span>{" "}
-            <span className="text-orange-300">3.90</span>
-          </p>
-          <p className="text-slate-300">{"}"}</p>
-        </div>
       </div>
     </section>
   );
