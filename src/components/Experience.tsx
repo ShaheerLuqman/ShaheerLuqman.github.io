@@ -5,12 +5,14 @@ const experiences = [
     period: "Jun 2025 – Present",
     type: "Full-Time · US-based (Remote)",
     description:
-      "Continuing as a full-time engineer building production-grade AI systems and end-to-end solutions for real-world industrial use cases.",
+      "Continuing as a full-time engineer building production-grade AI systems and end-to-end solutions for real-world industrial use cases, while contributing to in-house software across both frontend and backend. Also doing ongoing research in Robot Manipulation and Vision-Language-Action systems.",
     highlights: [
       "Delivered a complete AI-powered solution for BMW — designed and implemented frontend, backend, and AI components across the full lifecycle",
-      "Owned 16+ modules due to consistent high-quality delivery",
+      "Worked on in-house software for both frontend and backend, providing support for various development tasks",
+      "Helped support deployments by working with various AWS products and RunPod infrastructure",
+      "Conducted research on unsupervised action segmentation and temporal long-video understanding",
     ],
-    tech: ["Python", "PyTorch", "Computer Vision", "LLMs", "Full-Stack", "YOLO", "MediaPipe", "Whisper"],
+    tech: ["Python", "PyTorch", "Computer Vision", "VLMs", "Full-Stack", "Vue.js", "Django", "AWS", "RunPod"],
     companyLogo: "https://media.licdn.com/dms/image/v2/C560BAQHQWExfrZLB1w/company-logo_200_200/company-logo_200_200/0/1651697836937/retrocausal_ai_logo?e=1778112000&v=beta&t=9w0mWTvDzC049OQuYiEy_J18jjbRbHtJm6148osGciM",
     companyLink: "https://retrocausal.ai/",
     companyLinkedIn: "https://www.linkedin.com/company/retrocausal-ai/",
@@ -22,12 +24,13 @@ const experiences = [
     period: "Jul 2025 – Oct 2025",
     type: "Contract · Remote",
     description:
-      "Completed the MTO program and contributed across cross-functional initiatives in a fast-paced AI-focused environment.",
+      "Completed the MTO program while contributing to NLP and speech-focused AI workflows in a fast-paced production environment.",
     highlights: [
       "Selected in a highly competitive MTO cohort",
-      "Worked closely with teams on execution, communication, and delivery workflows",
+      "Built and supported NLP tasks including sentiment analysis, speech detection, and transcription pipelines",
+      "Worked on voice generation systems and AI calling agent creation",
     ],
-    tech: ["Program Management", "Communication", "Problem Solving", "Team Collaboration"],
+    tech: ["NLP", "Voice Generation", "Sentiment Analysis", "Speech Detection", "Transcription", "AI Calling Agents"],
     companyLogo:
       "https://media.licdn.com/dms/image/v2/D4D0BAQG3S7dl_H6JRg/company-logo_200_200/B4DZ1EHCvVHMAI-/0/1774964192285/confinality_logo?e=1778112000&v=beta&t=dJsGLNCS1ZAwQc6_gdvNcpWbzCrEPDUdeqPd31tCJos",
     companyLink: "http://confinality.com/",
@@ -45,10 +48,9 @@ const experiences = [
       "Started at Retrocausal as an intern, contributing to industrial-scale AI systems across computer vision, NLP, and LLM workflows.",
     highlights: [
       "Built end-to-end video activity recognition pipeline using Body Pose Estimation + Vision-Language Models, translating visual + textual data into PMTS codes for industrial optimization",
-      "Conducted research on unsupervised action segmentation and temporal long-video understanding",
       "Developed LLM-based prompt engineering systems with automated Excel report generation and visual analytics",
     ],
-    tech: ["Python", "PyTorch", "Computer Vision", "LLMs", "YOLO", "MediaPipe", "Whisper"],
+    tech: ["Python", "Django", "Computer Vision", "LLMs", "Backend Development", "MediaPipe", "Excel Automation"],
     companyLogo: "https://media.licdn.com/dms/image/v2/C560BAQHQWExfrZLB1w/company-logo_200_200/company-logo_200_200/0/1651697836937/retrocausal_ai_logo?e=1778112000&v=beta&t=9w0mWTvDzC049OQuYiEy_J18jjbRbHtJm6148osGciM",
     companyLink: "https://retrocausal.ai/",
     companyLinkedIn: "https://www.linkedin.com/company/retrocausal-ai/",

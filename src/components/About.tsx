@@ -1,10 +1,10 @@
 const highlights = [
   { label: "Company", value: "Retrocausal (US-based)" },
-  { label: "Focus", value: "Applied AI & Computer Vision" },
+  { label: "Focus", value: "Applied AI & Software Engineering" },
   { label: "ICPC", value: "Gold Medalist" },
   { label: "CGPA", value: "3.90 / 4.00 — FAST NUCES" },
   { label: "Research", value: "IEEE Xplore Published" },
-  { label: "Modules Owned", value: "16+ at Retrocausal" },
+  { label: "Specialization", value: "CV · NLP · Software Engineering" },
 ];
 
 export default function About() {
