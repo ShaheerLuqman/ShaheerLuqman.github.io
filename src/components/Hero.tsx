@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const PROFILE_IMAGE =
-  "https://media.licdn.com/dms/image/v2/D4D03AQF3dx5KKoT0dA/profile-displayphoto-shrink_400_400/B4DZUuD8wBHIAg-/0/1740234542669?e=1778112000&v=beta&t=O1HQsmXjafrUxaG3YEwfCjaxwa6uz0li6XbXfesg8tw";
+const PROFILE_IMAGE = "/assets/pfp.jpg";
 
 const roles = [
   "Applied Research Engineer",
@@ -18,6 +17,7 @@ export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [typing, setTyping] = useState(true);
+  const [isImageFullscreen, setIsImageFullscreen] = useState(false);
 
   useEffect(() => {
     const current = roles[roleIndex];
@@ -56,16 +56,22 @@ export default function Hero() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 text-center">
         {/* Profile photo */}
         <div className="flex justify-center mb-8">
-          <div className="relative h-32 w-32 sm:h-36 sm:w-36 md:h-40 md:w-40 rounded-full overflow-hidden ring-4 ring-[#3f63ad]/20 ring-offset-4 ring-offset-[#f5f8ff] shadow-lg shadow-[#3f63ad]/15">
+          <button
+            type="button"
+            onClick={() => setIsImageFullscreen(true)}
+            className="relative h-32 w-32 sm:h-36 sm:w-36 md:h-40 md:w-40 rounded-full overflow-hidden ring-4 ring-[#3f63ad]/20 ring-offset-4 ring-offset-[#f5f8ff] shadow-lg shadow-[#3f63ad]/15 cursor-zoom-in"
+            aria-label="Open profile photo in full screen"
+          >
             <Image
               src={PROFILE_IMAGE}
               alt="Muhammad Shaheer Luqman"
               fill
               className="object-cover object-top"
               priority
+              quality={100}
               sizes="(max-width: 768px) 128px, 160px"
             />
-          </div>
+          </button>
         </div>
 
         {/* Greeting */}
@@ -137,6 +143,36 @@ export default function Hero() {
           </svg>
         </div>
       </div>
+
+      {isImageFullscreen && (
+        <div
+          className="fixed inset-0 z-50 bg-[#0f172b]/90 backdrop-blur-sm p-4 sm:p-8"
+          onClick={() => setIsImageFullscreen(false)}
+        >
+          <div
+            className="relative mx-auto flex h-full w-full max-w-5xl items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setIsImageFullscreen(false)}
+              className="absolute right-2 top-2 z-10 rounded-md border border-white/25 bg-white/10 px-3 py-1.5 text-sm text-white hover:bg-white/20 transition-colors"
+            >
+              Close
+            </button>
+            <div className="relative h-[80vh] w-full">
+              <Image
+                src={PROFILE_IMAGE}
+                alt="Muhammad Shaheer Luqman full screen"
+                fill
+                className="object-contain"
+                quality={100}
+                sizes="(max-width: 640px) 95vw, (max-width: 1024px) 90vw, 1280px"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

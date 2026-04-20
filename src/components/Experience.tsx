@@ -2,8 +2,8 @@ const experiences = [
   {
     company: "Retrocausal",
     role: "Applied Research Engineer (Full-Time)",
-    period: "Jul 2024 – Present",
-    type: "Full-Time · US-based",
+    period: "Jun 2025 – Present",
+    type: "Full-Time · US-based (Remote)",
     description:
       "Continuing as a full-time engineer building production-grade AI systems and end-to-end solutions for real-world industrial use cases.",
     highlights: [
@@ -19,8 +19,8 @@ const experiences = [
   {
     company: "Confinality",
     role: "Management Trainee Officer (MTO)",
-    period: "14 Jul – 31 Oct",
-    type: "Remote",
+    period: "Jul 2025 – Oct 2025",
+    type: "Contract · Remote",
     description:
       "Completed the MTO program and contributed across cross-functional initiatives in a fast-paced AI-focused environment.",
     highlights: [
@@ -40,7 +40,7 @@ const experiences = [
     company: "Retrocausal",
     role: "Applied Research Engineer (Intern)",
     period: "Mar 2024 – Jun 2024",
-    type: "Internship · US-based",
+    type: "Internship · US-based (Remote)",
     description:
       "Started at Retrocausal as an intern, contributing to industrial-scale AI systems across computer vision, NLP, and LLM workflows.",
     highlights: [
