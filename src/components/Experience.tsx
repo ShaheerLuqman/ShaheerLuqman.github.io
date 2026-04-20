@@ -1,20 +1,58 @@
 const experiences = [
   {
     company: "Retrocausal",
-    role: "Applied Research Engineer",
-    period: "Mar 2024 – Present",
-    type: "Intern → Full-Time · US-based",
+    role: "Applied Research Engineer (Full-Time)",
+    period: "Jul 2024 – Present",
+    type: "Full-Time · US-based",
     description:
-      "Working on industrial-scale AI systems combining computer vision, NLP, and LLMs to solve real-world problems. Owned 16+ modules due to consistent high-quality delivery.",
+      "Continuing as a full-time engineer building production-grade AI systems and end-to-end solutions for real-world industrial use cases.",
     highlights: [
-      "Built end-to-end video activity recognition pipeline using Body Pose Estimation + Vision-Language Models, translating visual + textual data into PMTS codes for industrial optimization",
       "Delivered a complete AI-powered solution for BMW — designed and implemented frontend, backend, and AI components across the full lifecycle",
-      "Conducted research on unsupervised action segmentation and temporal long-video understanding",
-      "Developed LLM-based prompt engineering systems with automated Excel report generation and visual analytics",
       "Owned 16+ modules due to consistent high-quality delivery",
     ],
     tech: ["Python", "PyTorch", "Computer Vision", "LLMs", "Full-Stack", "YOLO", "MediaPipe", "Whisper"],
+    companyLogo: "https://media.licdn.com/dms/image/v2/C560BAQHQWExfrZLB1w/company-logo_200_200/company-logo_200_200/0/1651697836937/retrocausal_ai_logo?e=1778112000&v=beta&t=9w0mWTvDzC049OQuYiEy_J18jjbRbHtJm6148osGciM",
+    companyLink: "https://retrocausal.ai/",
+    companyLinkedIn: "https://www.linkedin.com/company/retrocausal-ai/",
     current: true,
+  },
+  {
+    company: "Confinality",
+    role: "Management Trainee Officer (MTO)",
+    period: "14 Jul – 31 Oct",
+    type: "Remote",
+    description:
+      "Completed the MTO program and contributed across cross-functional initiatives in a fast-paced AI-focused environment.",
+    highlights: [
+      "Selected in a highly competitive MTO cohort",
+      "Worked closely with teams on execution, communication, and delivery workflows",
+    ],
+    tech: ["Program Management", "Communication", "Problem Solving", "Team Collaboration"],
+    companyLogo:
+      "https://media.licdn.com/dms/image/v2/D4D0BAQG3S7dl_H6JRg/company-logo_200_200/B4DZ1EHCvVHMAI-/0/1774964192285/confinality_logo?e=1778112000&v=beta&t=dJsGLNCS1ZAwQc6_gdvNcpWbzCrEPDUdeqPd31tCJos",
+    companyLink: "http://confinality.com/",
+    companyLinkedIn: "https://www.linkedin.com/company/confinality/",
+    referenceLink:
+      "https://www.linkedin.com/posts/confinality_mto2025-confinalitycareers-lifeatconfinality-activity-7351599564967116800-xR4S/",
+    current: false,
+  },
+  {
+    company: "Retrocausal",
+    role: "Applied Research Engineer (Intern)",
+    period: "Mar 2024 – Jun 2024",
+    type: "Internship · US-based",
+    description:
+      "Started at Retrocausal as an intern, contributing to industrial-scale AI systems across computer vision, NLP, and LLM workflows.",
+    highlights: [
+      "Built end-to-end video activity recognition pipeline using Body Pose Estimation + Vision-Language Models, translating visual + textual data into PMTS codes for industrial optimization",
+      "Conducted research on unsupervised action segmentation and temporal long-video understanding",
+      "Developed LLM-based prompt engineering systems with automated Excel report generation and visual analytics",
+    ],
+    tech: ["Python", "PyTorch", "Computer Vision", "LLMs", "YOLO", "MediaPipe", "Whisper"],
+    companyLogo: "https://media.licdn.com/dms/image/v2/C560BAQHQWExfrZLB1w/company-logo_200_200/company-logo_200_200/0/1651697836937/retrocausal_ai_logo?e=1778112000&v=beta&t=9w0mWTvDzC049OQuYiEy_J18jjbRbHtJm6148osGciM",
+    companyLink: "https://retrocausal.ai/",
+    companyLinkedIn: "https://www.linkedin.com/company/retrocausal-ai/",
+    current: false,
   },
 ];
 
@@ -43,6 +81,14 @@ export default function Experience() {
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                     <div>
                       <div className="flex items-center gap-3 mb-1">
+                        {exp.companyLogo && (
+                          <img
+                            src={exp.companyLogo}
+                            alt={`${exp.company} logo`}
+                            className="w-8 h-8 rounded-md object-contain border border-[#3f63ad]/15 bg-white p-0.5"
+                            loading="lazy"
+                          />
+                        )}
                         <h3 className="text-xl font-bold text-[#1a2744]">{exp.company}</h3>
                         {exp.current && (
                           <span className="px-2 py-0.5 bg-[#3f63ad]/10 border border-[#3f63ad]/30 text-[#3f63ad] text-xs font-mono rounded-full">
@@ -52,6 +98,36 @@ export default function Experience() {
                       </div>
                       <p className="text-[#3f63ad] font-medium">{exp.role}</p>
                       <p className="text-[#5a6a8a] text-sm font-mono mt-0.5">{exp.type}</p>
+                      {exp.companyLink && (
+                        <a
+                          href={exp.companyLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex mt-2 text-xs font-mono text-[#3f63ad] hover:text-[#2e4a84] underline underline-offset-2"
+                        >
+                          Company website
+                        </a>
+                      )}
+                      {exp.companyLinkedIn && (
+                        <a
+                          href={exp.companyLinkedIn}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex mt-2 ml-3 text-xs font-mono text-[#3f63ad] hover:text-[#2e4a84] underline underline-offset-2"
+                        >
+                          Company LinkedIn
+                        </a>
+                      )}
+                      {exp.referenceLink && (
+                        <a
+                          href={exp.referenceLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex mt-2 ml-3 text-xs font-mono text-[#3f63ad] hover:text-[#2e4a84] underline underline-offset-2"
+                        >
+                          View reference
+                        </a>
+                      )}
                     </div>
                     <span className="font-mono text-sm text-[#5a6a8a] bg-[#f5f8ff] px-3 py-1 rounded-md border border-[#3f63ad]/15">
                       {exp.period}

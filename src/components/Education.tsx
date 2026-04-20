@@ -21,7 +21,7 @@ const education = [
     degree: "O Levels",
     institution: "Habib Public School",
     period: "",
-    grade: "Grades: 4A*, 2A, 2B",
+    grade: "Grades: 4A*, 2A, 3B",
     highlights: [],
   },
 ];
@@ -86,7 +86,7 @@ export default function Education() {
                     <p className="text-[#5a6a8a] text-sm font-mono mt-0.5">{aLevels.period}</p>
                   )}
                 </div>
-                {aLevels.highlights.length > 0 && (
+                {aLevels.grade && (
                   <span className="shrink-0 px-3 py-1.5 bg-[#e8eef7] border border-[#3f63ad]/20 text-[#3f63ad] text-sm font-mono rounded-lg">
                     {aLevels.grade}
                   </span>
@@ -116,7 +116,7 @@ export default function Education() {
                     <p className="text-[#5a6a8a] text-sm font-mono mt-0.5">{oLevels.period}</p>
                   )}
                 </div>
-                {oLevels.highlights.length > 0 && (
+                {oLevels.grade && (
                   <span className="shrink-0 px-3 py-1.5 bg-[#e8eef7] border border-[#3f63ad]/20 text-[#3f63ad] text-sm font-mono rounded-lg">
                     {oLevels.grade}
                   </span>
