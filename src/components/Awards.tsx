@@ -1,3 +1,9 @@
+"use client";
+
+import { PhotoProvider, PhotoView } from "react-photo-view";
+
+const GOLD_MEDAL_CERTIFICATE = "/assets/ICPC-GOLD_MEDAL.jpg";
+
 const awards = [
   { icon: "🥇", title: "Gold Medal", body: "ICPC National Competitive Programming", date: "Nov 2024" },
   { icon: "🥉", title: "Bronze Medal", body: "ICPC National Competitive Programming", date: "Feb 2024" },
@@ -39,6 +45,18 @@ export default function Awards() {
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-[#1a2744] text-sm">{award.title}</p>
                     <p className="text-[#5a6a8a] text-xs mt-0.5">{award.body}</p>
+                    {award.title === "Gold Medal" && (
+                      <PhotoProvider>
+                        <PhotoView src={GOLD_MEDAL_CERTIFICATE}>
+                          <button
+                            type="button"
+                            className="mt-2 inline-flex items-center rounded-md border border-[#3f63ad]/25 px-2.5 py-1 text-[11px] font-mono text-[#3f63ad] hover:bg-[#3f63ad]/8 transition-colors"
+                          >
+                            View certificate
+                          </button>
+                        </PhotoView>
+                      </PhotoProvider>
+                    )}
                   </div>
                   {award.date && (
                     <span className="shrink-0 font-mono text-xs text-[#98b3d9]">{award.date}</span>
@@ -76,6 +94,7 @@ export default function Awards() {
           </div>
         </div>
       </div>
+
     </section>
   );
 }

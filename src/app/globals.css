@@ -41,3 +41,17 @@ body {
   background: #3f63ad;
   border-radius: 3px;
 }
+
+.PhotoView-Slider__Backdrop {
+  background: rgba(15, 23, 43, 0.95) !important;
+}
+
+.PhotoView-Slider__Close {
+  top: 16px !important;
+  right: 16px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.35);
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 type PreviewDocument = {
   title: string;
@@ -48,15 +48,6 @@ const education = [
 export default function Education() {
   const [bsEducation, aLevels, oLevels] = education;
   const bsDocuments = bsEducation.documents ?? [];
-  const [selectedDocument, setSelectedDocument] = useState<PreviewDocument | null>(null);
-
-  const selectedDocumentType = useMemo(() => {
-    if (!selectedDocument?.file) {
-      return null;
-    }
-
-    return selectedDocument.file.toLowerCase().endsWith(".pdf") ? "pdf" : "image";
-  }, [selectedDocument]);
 
   return (
     <section id="education" className="py-24 px-6 bg-[#f5f8ff]">
@@ -105,30 +96,32 @@ export default function Education() {
 
               {bsDocuments.length > 0 && (
                 <div className="mt-5 md:mt-0 md:w-[360px] shrink-0">
-                  <div className="grid grid-cols-2 gap-3">
-                    {bsDocuments.map((doc: PreviewDocument) => (
-                      <button
-                        key={doc.title}
-                        type="button"
-                        onClick={() => setSelectedDocument(doc)}
-                        className="group/preview text-left overflow-hidden rounded-lg border border-[#3f63ad]/15 bg-[#f8fbff] hover:border-[#3f63ad]/35 hover:shadow-sm transition-all duration-200"
-                      >
-                        <div className="aspect-[4/3] bg-[#e8eef7]">
-                          <img
-                            src={doc.file}
-                            alt={`${doc.title} thumbnail`}
-                            className="h-full w-full object-cover"
-                          />
-                        </div>
-                        <div className="px-3 py-2">
-                          <p className="text-sm font-semibold text-[#1a2744] group-hover/preview:text-[#3f63ad] transition-colors">
-                            {doc.title}
-                          </p>
-                          <p className="text-xs text-[#5a6a8a]">Click to view full screen</p>
-                        </div>
-                      </button>
-                    ))}
-                  </div>
+                  <PhotoProvider>
+                    <div className="grid grid-cols-2 gap-3">
+                      {bsDocuments.map((doc: PreviewDocument) => (
+                        <PhotoView key={doc.title} src={doc.file}>
+                          <button
+                            type="button"
+                            className="group/preview text-left overflow-hidden rounded-lg border border-[#3f63ad]/15 bg-[#f8fbff] hover:border-[#3f63ad]/35 hover:shadow-sm transition-all duration-200"
+                          >
+                            <div className="aspect-[4/3] bg-[#e8eef7]">
+                              <img
+                                src={doc.file}
+                                alt={`${doc.title} thumbnail`}
+                                className="h-full w-full object-cover"
+                              />
+                            </div>
+                            <div className="px-3 py-2">
+                              <p className="text-sm font-semibold text-[#1a2744] group-hover/preview:text-[#3f63ad] transition-colors">
+                                {doc.title}
+                              </p>
+                              <p className="text-xs text-[#5a6a8a]">Click to view full screen</p>
+                            </div>
+                          </button>
+                        </PhotoView>
+                      ))}
+                    </div>
+                  </PhotoProvider>
                 </div>
               )}
             </div>
@@ -196,44 +189,6 @@ export default function Education() {
         </div>
       </div>
 
-      {selectedDocument && (
-        <div
-          className="fixed inset-0 z-50 bg-[#0f172b]/85 backdrop-blur-sm p-4 sm:p-8"
-          onClick={() => setSelectedDocument(null)}
-        >
-          <div
-            className="relative mx-auto h-full w-full max-w-6xl rounded-xl border border-white/20 bg-white shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between border-b border-[#3f63ad]/15 px-4 py-3">
-              <p className="font-semibold text-[#1a2744]">{selectedDocument.title}</p>
-              <button
-                type="button"
-                onClick={() => setSelectedDocument(null)}
-                className="rounded-md border border-[#3f63ad]/20 px-3 py-1.5 text-sm text-[#1a2744] hover:bg-[#f5f8ff] transition-colors"
-              >
-                Close
-              </button>
-            </div>
-
-            <div className="h-[calc(100%-58px)] w-full bg-[#f5f8ff]">
-              {selectedDocumentType === "pdf" ? (
-                <iframe
-                  src={selectedDocument.file}
-                  title={selectedDocument.title}
-                  className="h-full w-full"
-                />
-              ) : (
-                <img
-                  src={selectedDocument.file}
-                  alt={selectedDocument.title}
-                  className="h-full w-full object-contain"
-                />
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
