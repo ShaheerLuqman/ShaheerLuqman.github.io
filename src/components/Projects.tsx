@@ -1,7 +1,7 @@
 const projects = [
   {
-    title: "Digital Marketing Tool Using GenAI",
-    company: "PixelForge · Sep 2024 – May 2025",
+    title: "PixelForge - Digital Marketing Tool Using GenAI",
+    company: "Final Year Project",
     description:
       "A generative AI platform for creating marketing content including images and videos. Built for real-world marketing workflows with usability and scalability in mind.",
     highlights: [
@@ -12,41 +12,41 @@ const projects = [
     tech: ["React", "Flask", "Stable Diffusion", "GenAI", "Python"],
     tag: "GenAI",
     tagStyle: "bg-purple-50 border-purple-200 text-purple-600",
-    githubLink: "https://github.com/your-username/repo-name",
+    githubLink: "https://github.com/ShaheerLuqman/PixelForge",
   },
-  {
-    title: "Video Activity Recognition System",
-    company: "Retrocausal · Production",
-    description:
-      "Industrial AI system for analyzing human activity in videos and mapping them to structured PMTS codes for industrial process optimization.",
-    highlights: [
-      "Combined pose estimation + vision-language models for activity analysis",
-      "Designed scalable pipeline for long video processing",
-      "Enabled automation of industrial process analysis",
-    ],
-    tech: ["PyTorch", "MediaPipe", "Computer Vision", "VLMs", "Python"],
-    tag: "Production",
-    tagStyle: "bg-[#3f63ad]/10 border-[#3f63ad]/30 text-[#3f63ad]",
-    githubLink: "https://github.com/your-username/repo-name",
-  },
-  {
-    title: "Full-Stack Web Applications",
-    company: "Project Lead · Sep 2024 – Apr 2025",
-    description:
-      "Led development of multiple production-level web applications as Project Lead, handling both backend APIs and responsive frontends.",
-    highlights: [
-      "Acted as Project Lead across multiple projects",
-      "Built systems using MERN stack (MongoDB, Express, React, Node.js)",
-      "Developed automation scripts to streamline workflows",
-    ],
-    tech: ["MongoDB", "Express.js", "React", "Node.js", "JavaScript"],
-    tag: "Lead",
-    tagStyle: "bg-emerald-50 border-emerald-200 text-emerald-600",
-    githubLink: "https://github.com/your-username/repo-name",
-  },
+  // {
+  //   title: "Video Activity Recognition System",
+  //   company: "Retrocausal · Production",
+  //   description:
+  //     "Industrial AI system for analyzing human activity in videos and mapping them to structured PMTS codes for industrial process optimization.",
+  //   highlights: [
+  //     "Combined pose estimation + vision-language models for activity analysis",
+  //     "Designed scalable pipeline for long video processing",
+  //     "Enabled automation of industrial process analysis",
+  //   ],
+  //   tech: ["PyTorch", "MediaPipe", "Computer Vision", "VLMs", "Python"],
+  //   tag: "Production",
+  //   tagStyle: "bg-[#3f63ad]/10 border-[#3f63ad]/30 text-[#3f63ad]",
+  //   githubLink: "https://github.com/your-username/repo-name",
+  // },
+  // {
+  //   title: "Full-Stack Web Applications",
+  //   company: "Project Lead · Sep 2024 – Apr 2025",
+  //   description:
+  //     "Led development of multiple production-level web applications as Project Lead, handling both backend APIs and responsive frontends.",
+  //   highlights: [
+  //     "Acted as Project Lead across multiple projects",
+  //     "Built systems using MERN stack (MongoDB, Express, React, Node.js)",
+  //     "Developed automation scripts to streamline workflows",
+  //   ],
+  //   tech: ["MongoDB", "Express.js", "React", "Node.js", "JavaScript"],
+  //   tag: "Lead",
+  //   tagStyle: "bg-emerald-50 border-emerald-200 text-emerald-600",
+  //   githubLink: "https://github.com/your-username/repo-name",
+  // },
   {
     title: "Crypto Trading Simulator",
-    company: "Personal · Sep 2023 – Nov 2023",
+    company: "Personal",
     description:
       "A simulated trading platform for learning and experimenting with crypto markets, integrating real-time APIs with an intuitive trading UI.",
     highlights: [
@@ -57,38 +57,98 @@ const projects = [
     tech: ["MongoDB", "Express.js", "React", "Node.js", "Ant Design"],
     tag: "MERN",
     tagStyle: "bg-amber-50 border-amber-200 text-amber-600",
-    githubLink: "https://github.com/your-username/repo-name",
+    githubLink: "https://github.com/ShaheerLuqman/Crypto-Trading-Simulator",
   },
   {
-    title: "VQ-VAE / RVQ / HVQ Research",
-    company: "Research",
+    title: "LushWear-IMS Inventory Management System",
+    company: "Personal",
     description:
-      "Explored advanced quantization techniques in deep learning models including Vector Quantized VAE, Residual VQ, and Hierarchical VQ.",
+      "A desktop inventory management system with a FastAPI backend, Electron frontend, and Supabase integration for managing products and stock movement.",
     highlights: [
-      "Implemented VQ-VAE architectures from scratch",
-      "Experimented with Residual Vector Quantization (RVQ)",
-      "Analyzed representation quality and efficiency trade-offs",
+      "Built backend APIs in FastAPI for products, search, and stock movement",
+      "Developed desktop frontend using Electron with a modern dark-themed UI",
+      "Integrated Supabase for cloud-hosted inventory data and persistence",
     ],
-    tech: ["PyTorch", "Deep Learning", "Representation Learning", "VQ-VAE"],
-    tag: "Research",
-    tagStyle: "bg-slate-100 border-slate-300 text-slate-600",
-    githubLink: "https://github.com/your-username/repo-name",
+    tech: ["FastAPI", "Python", "Electron", "JavaScript", "Supabase"],
+    tag: "Desktop",
+    tagStyle: "bg-cyan-50 border-cyan-200 text-cyan-700",
+    githubLink: "https://github.com/ShaheerLuqman/LushWear-IMS",
   },
   {
-    title: "IoT Child Safety Surveillance",
-    company: "Research · IEEE Published",
+    title: "Fashion Industry Recommender System",
+    company: "Personal",
     description:
-      "An intelligent IoT system for monitoring children and detecting anomalous behavior remotely. Published in IEEE Xplore at ICETST 2024.",
+      "A CNN-powered recommender system for the fashion industry that analyzes visual clothing features to generate personalized item suggestions.",
     highlights: [
-      "Designed anomaly detection pipeline for behavioral monitoring",
-      "Integrated IoT sensors with real-time alerting system",
-      "Published in IEEE Xplore — ICETST 2024",
+      "Built recommendation pipeline using deep learning-based visual embeddings",
+      "Created Python app interface to surface tailored product suggestions",
+      "Worked with feature datasets and serialized recommendation artifacts for inference",
     ],
-    tech: ["IoT", "Python", "Arduino", "AI", "Anomaly Detection"],
-    tag: "📄 IEEE",
-    tagStyle: "bg-emerald-50 border-emerald-200 text-emerald-600",
-    githubLink: "https://github.com/your-username/repo-name",
+    tech: ["Python", "CNN", "Deep Learning", "Recommendation Systems", "Flask"],
+    tag: "AI/ML",
+    tagStyle: "bg-violet-50 border-violet-200 text-violet-700",
+    githubLink: "https://github.com/ShaheerLuqman/Fashion-Industry-RS",
   },
+  {
+    title: "Phishing Detection Web App",
+    company: "Personal",
+    description:
+      "A phishing detection application that classifies suspicious content and provides an accessible web interface for checking potential threats.",
+    highlights: [
+      "Developed detection workflow in Python for phishing-related classification",
+      "Implemented web-facing experience for quick URL/content safety checks",
+      "Prepared deployment configuration for hosting and accessibility",
+    ],
+    tech: ["Python", "Cyber Security", "Phishing Detection"],
+    tag: "Cyber Security",
+    tagStyle: "bg-rose-50 border-rose-200 text-rose-700",
+    githubLink: "https://github.com/ShaheerLuqman/phish_detector",
+  },
+  {
+    title: "Contacts Organizer",
+    company: "Personal",
+    description:
+      "A C++ contact management application for storing, searching, updating, and organizing personal contact records using file-backed data.",
+    highlights: [
+      "Built core contact CRUD operations with search and sorting support",
+      "Implemented CSV-based persistence with backup file handling",
+      "Structured terminal-based workflows for efficient contact management",
+    ],
+    tech: ["C++", "Data Structures", "File Handling", "CSV"],
+    tag: "Systems",
+    tagStyle: "bg-slate-100 border-slate-300 text-slate-700",
+    githubLink: "https://github.com/ShaheerLuqman/Contacts_Organizer",
+  },
+  // {
+  //   title: "VQ-VAE / RVQ / HVQ Research",
+  //   company: "Research",
+  //   description:
+  //     "Explored advanced quantization techniques in deep learning models including Vector Quantized VAE, Residual VQ, and Hierarchical VQ.",
+  //   highlights: [
+  //     "Implemented VQ-VAE architectures from scratch",
+  //     "Experimented with Residual Vector Quantization (RVQ)",
+  //     "Analyzed representation quality and efficiency trade-offs",
+  //   ],
+  //   tech: ["PyTorch", "Deep Learning", "Representation Learning", "VQ-VAE"],
+  //   tag: "Research",
+  //   tagStyle: "bg-slate-100 border-slate-300 text-slate-600",
+  //   githubLink: "https://github.com/your-username/repo-name",
+  // },
+  // {
+  //   title: "IoT Child Safety Surveillance",
+  //   company: "Research · IEEE Published",
+  //   description:
+  //     "An intelligent IoT system for monitoring children and detecting anomalous behavior remotely. Published in IEEE Xplore at ICETST 2024.",
+  //   highlights: [
+  //     "Designed anomaly detection pipeline for behavioral monitoring",
+  //     "Integrated IoT sensors with real-time alerting system",
+  //     "Published in IEEE Xplore — ICETST 2024",
+  //   ],
+  //   tech: ["IoT", "Python", "Arduino", "AI", "Anomaly Detection"],
+  //   tag: "📄 IEEE",
+  //   tagStyle: "bg-emerald-50 border-emerald-200 text-emerald-600",
+  //   githubLink: "https://github.com/your-username/repo-name",
+  // },
 ];
 
 export default function Projects() {
