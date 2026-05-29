@@ -13,7 +13,7 @@ const experiences = [
       "Conducted research on unsupervised action segmentation and temporal long-video understanding",
     ],
     tech: ["Python", "PyTorch", "Computer Vision", "VLMs", "Full-Stack", "Vue.js", "Django", "AWS", "RunPod"],
-    companyLogo: "https://media.licdn.com/dms/image/v2/C560BAQHQWExfrZLB1w/company-logo_200_200/company-logo_200_200/0/1651697836937/retrocausal_ai_logo?e=1778112000&v=beta&t=9w0mWTvDzC049OQuYiEy_J18jjbRbHtJm6148osGciM",
+    companyLogo: "/assets/retrocausal_ai_logo.jpg",
     companyLink: "https://retrocausal.ai/",
     companyLinkedIn: "https://www.linkedin.com/company/retrocausal-ai/",
     current: true,
@@ -31,8 +31,7 @@ const experiences = [
       "Worked on voice generation systems and AI calling agent creation",
     ],
     tech: ["NLP", "Voice Generation", "Sentiment Analysis", "Speech Detection", "Transcription", "AI Calling Agents"],
-    companyLogo:
-      "https://media.licdn.com/dms/image/v2/D4D0BAQG3S7dl_H6JRg/company-logo_200_200/B4DZ1EHCvVHMAI-/0/1774964192285/confinality_logo?e=1778112000&v=beta&t=dJsGLNCS1ZAwQc6_gdvNcpWbzCrEPDUdeqPd31tCJos",
+    companyLogo: "/assets/confinality_logo.jpg",
     companyLink: "http://confinality.com/",
     companyLinkedIn: "https://www.linkedin.com/company/confinality/",
     referenceLink:
@@ -51,7 +50,7 @@ const experiences = [
       "Developed LLM-based prompt engineering systems with automated Excel report generation and visual analytics",
     ],
     tech: ["Python", "Django", "Computer Vision", "LLMs", "Backend Development", "MediaPipe", "Excel Automation"],
-    companyLogo: "https://media.licdn.com/dms/image/v2/C560BAQHQWExfrZLB1w/company-logo_200_200/company-logo_200_200/0/1651697836937/retrocausal_ai_logo?e=1778112000&v=beta&t=9w0mWTvDzC049OQuYiEy_J18jjbRbHtJm6148osGciM",
+    companyLogo: "/assets/retrocausal_ai_logo.jpg",
     companyLink: "https://retrocausal.ai/",
     companyLinkedIn: "https://www.linkedin.com/company/retrocausal-ai/",
     current: false,
