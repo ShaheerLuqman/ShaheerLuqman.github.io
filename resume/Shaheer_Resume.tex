@@ -1,0 +1,277 @@
+% !TEX program = xelatex
+%==============================================================================
+% Muhammad Shaheer Luqman — Resume (single column)
+% Theme matched to portfolio: accent blue #3f63ad, heading navy #1a2744,
+% body slate #5a6a8a. Font: Poppins.
+% IMPORTANT: Compile with xelatex (uses system Poppins font via fontspec):
+%   xelatex Shaheer_Resume.tex
+%==============================================================================
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{amssymb}
+\usepackage{fontspec}
+% Poppins (installed system font). Geometric sans — slightly heavier than Arial.
+\setmainfont{Poppins}[
+  UprightFont = {Poppins Light},
+  ItalicFont  = {Poppins Light Italic},
+  BoldFont    = {Poppins SemiBold},
+  BoldItalicFont = {Poppins SemiBold Italic},
+  Scale = 0.90
+]
+\usepackage[top=1.1cm,bottom=1.1cm,left=1.4cm,right=1.4cm]{geometry}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{parskip}
+\usepackage{etoolbox}
+\usepackage{multicol}
+\setlength{\multicolsep}{2pt}
+\setlength{\columnsep}{1.2em}
+% Tight paragraph spacing to compress the document to two pages.
+\setlength{\parskip}{2pt plus 1pt minus 1pt}
+
+%------------------------------- Colors --------------------------------------
+\definecolor{accent}{HTML}{3F63AD}   % portfolio primary blue
+\definecolor{accentdk}{HTML}{2E4A84} % darker blue (hover state)
+\definecolor{heading}{HTML}{1A2744}  % navy headings
+\definecolor{body}{HTML}{4A5878}     % slate body text
+\definecolor{muted}{HTML}{7A89A8}    % muted / dates
+\definecolor{rule}{HTML}{3F63AD}
+\definecolor{chipbg}{HTML}{E8EEF7}   % tech-tag background
+
+%------------------------------- Hyperlinks ----------------------------------
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent,
+  pdftitle={Muhammad Shaheer Luqman — Resume},
+  pdfauthor={Muhammad Shaheer Luqman}
+}
+
+%------------------------------- Section style -------------------------------
+\titleformat{\section}
+  {\Large\bfseries\color{heading}}
+  {}{0em}
+  {}[\vspace{2pt}{\color{rule}\titlerule[1.2pt]}\vspace{-2pt}]
+\titlespacing*{\section}{0pt}{7pt}{3pt}
+
+% Default body color
+\AtBeginDocument{\color{body}}
+
+%------------------------------- Helper macros -------------------------------
+% Experience / entry header: title (left, bold navy) + date (right, muted)
+% #1 = title, #2 = date, #3 = subtitle (accent italic), #4 = meta (muted small)
+% Pass empty {} for any unused field.
+% Title wraps within the left column; date stays flush right with a guaranteed gap.
+\newlength{\datew}
+\newcommand{\entryline}[2]{%
+  \noindent
+  \begingroup
+  \settowidth{\datew}{\color{muted}#2}%
+  \parbox[t]{\dimexpr\linewidth-\datew-1em\relax}{\raggedright\bfseries\color{heading}#1}%
+  \hfill
+  \parbox[t]{\datew}{\raggedleft\color{muted}#2}%
+  \par
+  \endgroup
+}
+\newcommand{\subline}[1]{\ifblank{#1}{}{{\color{accent}\itshape #1}\par}}
+\newcommand{\metaline}[1]{\ifblank{#1}{}{{\color{muted}\small #1}\par}}
+\newcommand{\entry}[4]{%
+  \entryline{#1}{#2}%
+  \vspace{2pt}%
+  \subline{#3}%
+  \metaline{#4}%
+  \vspace{1pt}%
+}
+
+% Bullet list tuned tight
+\newlist{tight}{itemize}{1}
+\setlist[tight]{leftmargin=1.2em,itemsep=0.5pt,topsep=1pt,parsep=0pt,partopsep=0pt,
+  label={\color{accent}\footnotesize$\blacktriangleright$}}
+
+% Tech / skill chip
+\newcommand{\chip}[1]{\colorbox{chipbg}{\color{accentdk}\small\,#1\,}\hspace{2pt}}
+
+\setlength{\parindent}{0pt}
+
+%==============================================================================
+\begin{document}
+
+%------------------------------- Header --------------------------------------
+{\fontsize{30}{34}\selectfont\bfseries\color{accent}Muhammad Shaheer Luqman}
+
+\vspace{4pt}
+{\color{body}Driven Software \& Applied AI Engineer building production-grade AI systems and
+end-to-end solutions for real-world industrial problems. Strong in problem-solving, system
+design, computer vision, NLP, and full-stack development.}
+
+\vspace{3pt}
+{\color{heading}%
+\faEnvelope[regular]\; \href{mailto:muhammadshaheerluqman@gmail.com}{muhammadshaheerluqman@gmail.com}
+\quad\textbar\quad
+\faMobile*\; \href{tel:+923100124127}{+92 310 0124127}
+\quad\textbar\quad
+\faLinkedin\; \href{http://linkedin.com/in/shaheerluqman}{linkedin.com/in/shaheerluqman}
+}\\[3pt]
+{\color{heading}%
+\faGithub\; \href{https://github.com/ShaheerLuqman}{github.com/ShaheerLuqman}
+\quad\textbar\quad
+\faGlobe\; \href{https://muhammad-shaheer-portfolio.vercel.app/}{muhammad-shaheer-portfolio.vercel.app}
+}
+
+%------------------------------- Experience ----------------------------------
+\section{Experience}
+
+\entry{Applied Research Engineer (Full-Time) \textnormal{\small— Retrocausal}}{Jun 2025 -- Present}%
+{}{Full-Time \textbullet\ US-based (Remote)}
+Building production-grade AI systems and end-to-end solutions for industrial use cases, contributing
+to in-house frontend/backend software, and researching Robot Manipulation and Vision-Language-Action systems.
+\begin{tight}
+  \item Delivered a complete AI-powered solution for \textbf{BMW} — designed and implemented frontend, backend, and AI components across the full lifecycle.
+  \item Worked on in-house software for both frontend and backend, supporting a range of development tasks.
+  \item Supported deployments using various \textbf{AWS} products and \textbf{RunPod} infrastructure.
+  \item Conducted research on unsupervised action segmentation and temporal long-video understanding.
+\end{tight}
+\vspace{2pt}
+{\footnotesize\chip{Python}\chip{PyTorch}\chip{Computer Vision}\chip{VLMs}\chip{Full-Stack}\chip{Vue.js}\chip{Django}\chip{AWS}\chip{RunPod}}
+
+\vspace{4pt}
+\entry{Management Trainee Officer (MTO) \textnormal{\small— Confinality}}{Jul 2025 -- Oct 2025}%
+{}{Contract \textbullet\ Remote}
+Completed the MTO program while contributing to NLP and speech-focused AI workflows in production.
+\begin{tight}
+  \item Selected in a highly competitive MTO cohort.
+  \item Built and supported NLP tasks including sentiment analysis, speech detection, and transcription pipelines.
+  \item Worked on voice generation systems and AI calling agent creation.
+\end{tight}
+\vspace{2pt}
+{\footnotesize\chip{NLP}\chip{Voice Generation}\chip{Sentiment Analysis}\chip{Speech Detection}\chip{Transcription}\chip{AI Calling Agents}}
+
+\vspace{4pt}
+\entry{Applied Research Engineer (Intern) \textnormal{\small— Retrocausal}}{Mar 2024 -- Jun 2024}%
+{}{Internship \textbullet\ US-based (Remote)}
+Contributed to industrial-scale AI systems across computer vision, NLP, and LLM workflows.
+\begin{tight}
+  \item Built an end-to-end video activity recognition pipeline using \textbf{Body Pose Estimation} + \textbf{Vision-Language Models}, translating visual and textual data into PMTS codes for industrial process optimization.
+  \item Developed \textbf{LLM-based prompt engineering} systems with automated Excel report generation and visual analytics.
+\end{tight}
+\vspace{2pt}
+{\footnotesize\chip{Python}\chip{Django}\chip{Computer Vision}\chip{LLMs}\chip{Backend}\chip{MediaPipe}\chip{Excel Automation}}
+
+%------------------------------- Education -----------------------------------
+\section{Education}
+
+\entry{BS Computer Science \textnormal{\small— FAST NUCES}}{Sep 2021 -- Aug 2025}%
+{}{CGPA: 3.90 / 4.00}
+\begin{tight}
+  \item Summa Cum Laude Honors.
+  \item Rector's List (4.0 GPA) — 4 semesters.
+  \item Dean's List (3.5+ GPA) — 4 semesters.
+\end{tight}
+
+\vspace{3pt}
+\entry{A Levels \textnormal{\small— Generation's School}}{}{}{Grades: A*, 2A}
+
+\vspace{4pt}
+\entry{O Levels \textnormal{\small— Habib Public School}}{}{}{Grades: 4A*, 2A, 3B}
+
+%------------------------- Research & Publications ---------------------------
+\section{Research \& Publications}
+
+\entry{Unsupervised Skeleton-Based Action Segmentation via Hierarchical Spatiotemporal Vector Quantization}{2026}%
+{arXiv:2604.15196}{}
+A hierarchical spatiotemporal vector quantization framework for unsupervised skeleton-based temporal
+action segmentation, achieving SOTA on the HuGaDB, LARa, and BABEL benchmarks. \href{https://arxiv.org/abs/2604.15196}{View on arXiv}
+
+\vspace{3pt}
+\entry{Ensuring Child Safety: An IoT-Based Surveillance System for Remote Monitoring and Detection of Anomalous Behavior}{2024}%
+{ICETST 2024 \textbullet\ IEEE Xplore}{}
+Proposed an intelligent IoT-based system for remote child monitoring, combining hardware sensors,
+software components, and AI-driven anomaly detection to deliver real-time safety alerts.
+\href{https://ieeexplore.ieee.org/document/10737980}{View on IEEE Xplore}
+
+\vspace{4pt}
+{\color{heading}\textbf{Research Interests:}}\ {\color{body}Robotics, Computer Vision, Temporal Video
+Understanding, Vector Quantization, IoT + AI Systems, Vision-Language Models.}
+
+%------------------------------- Projects ------------------------------------
+\section{Projects}
+
+\entry{PixelForge — Digital Marketing Tool Using GenAI}{}{Final Year Project \href{https://github.com/ShaheerLuqman/PixelForge}{\textnormal{(GitHub)}}}{}
+A generative AI platform for marketing content (images/video), built for real-world workflows.
+\begin{tight}
+  \item Built a full-stack system using \textbf{React + Flask}, integrating \textbf{Stable Diffusion} for AI image generation.
+  \item Developed pipelines for automated ad content generation (image/video).
+\end{tight}
+
+\vspace{2pt}
+\entry{Crypto Trading Simulator}{}{Personal \href{https://github.com/ShaheerLuqman/Crypto-Trading-Simulator}{\textnormal{(GitHub)}}}{}
+\begin{tight}
+  \item Built a simulated crypto-trading platform on the \textbf{MERN} stack with real-time market-data APIs.
+  \item Designed an intuitive UI using Ant Design and implemented database-backed simulation logic.
+\end{tight}
+
+\vspace{2pt}
+\entry{LushWear-IMS — Inventory Management System}{}{Personal \href{https://github.com/ShaheerLuqman/LushWear-IMS}{\textnormal{(GitHub)}}}{}
+\begin{tight}
+  \item Built backend APIs in \textbf{FastAPI} for products, search, and stock movement.
+  \item Developed a desktop \textbf{Electron} frontend with a modern dark UI, integrating \textbf{Supabase} for persistence.
+\end{tight}
+
+\vspace{2pt}
+\entry{Fashion Industry Recommender System}{}{Personal \href{https://github.com/ShaheerLuqman/Fashion-Industry-RS}{\textnormal{(GitHub)}}}{}
+\begin{tight}
+  \item A CNN-powered recommender using deep-learning visual embeddings to generate personalized item suggestions.
+  \item Created a Python app interface to surface tailored product suggestions.
+\end{tight}
+
+\vspace{2pt}
+\entry{Phishing Detection Web App}{}{Personal \href{https://github.com/ShaheerLuqman/phish_detector}{\textnormal{(GitHub)}}}{}
+\begin{tight}
+  \item Developed a Python phishing-classification workflow with a web-facing interface for quick URL/content checks.
+\end{tight}
+
+\vspace{2pt}
+\entry{Contacts Organizer}{}{Personal \href{https://github.com/ShaheerLuqman/Contacts_Organizer}{\textnormal{(GitHub)}}}{}
+\begin{tight}
+  \item A C++ contact manager with CRUD, search/sorting, and CSV-based persistence with backup handling.
+\end{tight}
+
+%------------------------------- Skills --------------------------------------
+\section{Skills}
+
+\newcommand{\skillrow}[2]{\noindent{\color{heading}\textbf{#1}}\hspace{4pt}{\color{body}#2}\par\vspace{1pt}}
+
+\skillrow{AI / Machine Learning}{PyTorch, Scikit-learn, Hugging Face; Computer Vision (YOLO, MediaPipe); Diffusion Models (Stable Diffusion); NLP (BERT, Whisper, 11Labs); LLM Prompt Engineering.}
+\skillrow{Software Engineering}{Backend (Django, Flask, FastAPI, Express.js); Frontend (React, Next.js, Vue); REST APIs, GraphQL; Postman; Databases (MySQL, MongoDB, Oracle SQL, PostgreSQL); Cloud (AWS, RunPod); System Design.}
+\skillrow{Systems \& Tools}{Selenium (Web Automation), Arduino Programming, Assembly Language, IoT Systems, Git \& Version Control, Linux, Docker.}
+\skillrow{Programming Languages}{Python, C / C++, JavaScript.}
+
+%--------------------------- Honors & Awards ---------------------------------
+\section{Honors \& Awards}
+\begin{tight}
+  \item \textbf{Gold Medal} — ICPC National Competitive Programming \textit{(Nov 2024)}
+  \item \textbf{Summa Cum Laude} — Graduated with a high GPA (3.90 / 4.00), FAST NUCES \textit{(2025)}
+  \item \textbf{Bronze Medal} — ICPC National Competitive Programming \textit{(Feb 2024)}
+  \item \textbf{Winner} — Code Sprint, PROCOM 2023 \textit{(2023)}
+  \item \textbf{Best Team Award} — Coder's Cup, ACM FAST
+  \item \textbf{Rector's List (4.0 GPA)} — FAST NUCES, 4 semesters \quad\textbullet\quad \textbf{Dean's List (3.5+ GPA)} — FAST NUCES, 4 semesters
+\end{tight}
+
+%----------------------- Leadership & Volunteer ------------------------------
+\section{Leadership \& Volunteer Experience}
+\begin{multicols}{2}
+\begin{tight}
+  \item \textbf{Director Technical Affairs} — Developers Day'25
+  \item \textbf{Technical Lead} — ACM NUCES
+  \item \textbf{CS Competition Head} — Developers Day'24
+  \item \textbf{CS Competition Co-Head} — PROCOM'24
+  \item \textbf{Training \& Mentorship Head} — ACM NUCES
+\end{tight}
+\end{multicols}
+
+\end{document}

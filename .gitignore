@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# latex resume
+build.log
+Shaheer_Resume.aux
+Shaheer_Resume.fdb_latexmk
+Shaheer_Resume.fls
+Shaheer_Resume.log
+Shaheer_Resume.out
+.latexmkrc
+Shaheer_Resume.synctex.gz
+Shaheer_Resume.synctex(busy)
+
+texput.log
