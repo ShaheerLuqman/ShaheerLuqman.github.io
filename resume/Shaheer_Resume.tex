@@ -107,7 +107,7 @@
 % Bullet list tuned tight
 \newlist{tight}{itemize}{1}
 \setlist[tight]{leftmargin=1.2em,itemsep=0.5pt,topsep=1pt,parsep=0pt,partopsep=0pt,
-  label={\color{accent}\footnotesize$\blacktriangleright$}}
+  label={\color{accent}\raisebox{0ex}{\normalsize\textbullet}}}
 
 % Tech / skill chip — \strut forces a constant box height/depth so every chip
 % has the same vertical size regardless of ascenders/descenders in the text.
@@ -127,22 +127,20 @@
 {\fontsize{30}{34}\selectfont\bfseries\color{accent}Muhammad Shaheer Luqman}
 
 \vspace{2pt}
-{\color{body}Applied AI \& Software Engineer shipping end-to-end AI systems for industrial clients.
-Specialized in computer vision, NLP, and reinforcement learning, with full-stack engineering and
-research publication experience.}
+{\color{body}Applied AI \& Software Engineer who ships end-to-end computer vision, NLP, and reinforcement learning systems for industrial clients --- from research to full-stack delivery and cloud deployment. Published researcher (2$\times$ arXiv, IEEE) and ICPC Gold Medalist.}
 
 \vspace{2pt}
 {\color{heading}%
-\faEnvelope[regular]\; \href{mailto:muhammadshaheerluqman@gmail.com}{muhammadshaheerluqman@gmail.com}
+\faEnvelope[regular]\; Email: \href{mailto:muhammadshaheerluqman@gmail.com}{muhammadshaheerluqman@gmail.com}
 \quad\textbar\quad
-\faMobile*\; \href{tel:+923100124127}{+92 310 0124127}
+\faMobile*\; Phone: \href{tel:+923100124127}{+92 310 0124127}
 \quad\textbar\quad
-\faLinkedin\; \href{http://linkedin.com/in/shaheerluqman}{linkedin.com/in/shaheerluqman}
+\faGithub\; GitHub: \href{https://github.com/ShaheerLuqman}{/ShaheerLuqman}
 }\\[3pt]
 {\color{heading}%
-\faGithub\; \href{https://github.com/ShaheerLuqman}{github.com/ShaheerLuqman}
+\faLinkedin\; LinkedIn: \href{http://linkedin.com/in/shaheerluqman}{linkedin.com/in/shaheerluqman}
 \quad\textbar\quad
-\faGlobe\; \href{https://muhammad-shaheer-portfolio.vercel.app/}{muhammad-shaheer-portfolio.vercel.app}
+\faGlobe\; Portfolio: \href{https://muhammad-shaheer-portfolio.vercel.app/}{muhammad-shaheer-portfolio.vercel.app}
 }
 
 
@@ -162,12 +160,12 @@ software, and researching robot manipulation and Vision-Language-Action systems.
 \vspace{2pt}
 {\footnotesize\chip{Python}\chip{PyTorch}\chip{Computer Vision}\chip{VLMs}\chip{Full-Stack}\chip{Vue.js}\chip{Django}\chip{AWS}\chip{RunPod}\chip{Reinforcement Learning}\chip{Robotics}}
 
-\entry{Management Trainee Officer (MTO) \textnormal{\small— Confinality}}{Jul 2025 -- Oct 2025}%
+\entry{Management Trainee Officer (MTO) — AI/NLP \textnormal{\small— Confinality}}{Jul 2025 -- Oct 2025}%
 {}{Contract (Part-time, Evening Shift) \textbullet\ Remote}
 Selected for the \textbf{MTO} trainee program, working on \textbf{NLP and speech-focused AI} workflows.
 \begin{tight}
   \item Engineered \textbf{NLP} pipelines for \textbf{sentiment analysis, speech detection, and transcription}.
-  \item Developed \textbf{voice generation} systems for automated client workflows.
+  \item Developed \textbf{voice generation} workflows reducing manual call handling for client operations.
   \item Iteratively improved our \textbf{AI calling agents}, raising their \textbf{call transfer rate from \textless1\% to \textasciitilde6\%}.
   \item Delivered \textbf{call-performance analysis and next-step recommendations} to clients and internal teams.
 \end{tight}
@@ -178,7 +176,7 @@ Selected for the \textbf{MTO} trainee program, working on \textbf{NLP and speech
 {}{Internship \textbullet\ US-based (Remote)}
 Worked on \textbf{industrial-scale AI systems} across computer vision, NLP, and LLM workflows.
 \begin{tight}
-  \item Built an end-to-end video activity recognition pipeline using \textbf{Body Pose Estimation} + \textbf{Vision-Language Models}, translating visual and textual data into PMTS codes for industrial process optimization.
+  \item Built a video activity recognition pipeline using \textbf{Body Pose Estimation} and \textbf{Vision-Language Models} to automate PMTS code generation for industrial workflow optimization.
   \item Developed \textbf{LLM-based prompt engineering} systems for automated analysis of industrial process data.
   \item Generated automated \textbf{Excel reports} with graph and table visualizations, building \textbf{16 modules} in total.
 \end{tight}
@@ -214,7 +212,7 @@ software components, and AI-driven anomaly detection to deliver real-time safety
 %------------------------------- Education -----------------------------------
 \section{Education}
 \firstentry
-\entry{BS Computer Science \textnormal{\small— FAST NUCES}}{Sep 2021 -- Aug 2025}%
+\entry{BS Computer Science \textnormal{\small— FAST NUCES}}{Sep 2021 -- Jun 2025}%
 {}{CGPA: \textbf{3.90 / 4.00 - Summa Cum Laude Honors}}
 
 \entry{A Levels \textnormal{\small— Generation's School}}{}{}{Grades: A*, 2A}
@@ -224,35 +222,27 @@ software components, and AI-driven anomaly detection to deliver real-time safety
 %------------------------------- Projects ------------------------------------
 \section{Projects}
 \firstentry
-\entry{PixelForge — Digital Marketing Tool Using GenAI}{}{Final Year Project (\href{https://github.com/ShaheerLuqman/PixelForge}{GitHub})}{}
-A generative AI platform for marketing content (images/video), built for real-world workflows.
+\entry{PixelForge — AI-Driven Digital Marketing Platform}{}{Final Year Project (\href{https://github.com/ShaheerLuqman/PixelForge}{GitHub})}{}
 \begin{tight}
-  \item Built a full-stack system using \textbf{React + Flask}, integrating \textbf{Stable Diffusion} for AI image generation.
-  \item Developed pipelines for automated ad content generation (image/video).
+  \item Built a full-stack generative AI platform using \textbf{React}, \textbf{Flask}, and \textbf{PostgreSQL} for automated advertisement image and video generation.
+  \item Developed AI pipelines combining \textbf{BLIP} captioning, \textbf{Gemini}-powered slogan generation, and diffusion-based image synthesis for product-aware marketing content.
+  \item Integrated \textbf{RunwayML Gen-1} workflows for AI-generated promotional videos using image-conditioned prompt engineering.
+  \item Engineered an end-to-end system enabling users to generate branded advertisements from product images with minimal manual input.
 \end{tight}
 
-\entry{Crypto Trading Simulator}{}{Personal (\href{https://github.com/ShaheerLuqman/Crypto-Trading-Simulator}{GitHub})}{}
+\entry{LushWear — Business Operation Management}{}{Client (\href{https://github.com/ShaheerLuqman/LushWear-IMS}{GitHub})}{}
+Built, sold, and actively maintained for a local business to manage their day-to-day operations; currently in production use.
 \begin{tight}
-  \item Developed a simulated crypto-trading platform on the \textbf{MERN} stack with real-time market-data APIs.
-  \item Designed an intuitive UI using Ant Design and implemented database-backed simulation logic.
+  \item Engineered scalable backend APIs using \textbf{FastAPI} for inventory, product catalog, stock tracking, and search operations.
+  \item Built a cross-platform desktop application with \textbf{Electron}, featuring a modern responsive UI for inventory management workflows.
+  \item Integrated \textbf{Supabase} for real-time database operations, authentication, and persistent cloud-backed storage.
+  \item Built end-to-end \textbf{order management} with live order tracking via \textbf{courier APIs} and two-way \textbf{Shopify} integration for storefront sync.
+  \item Designed inventory movement and tracking logic to streamline product updates, stock monitoring, and operational workflows.
 \end{tight}
 
-\entry{LushWear-IMS — Inventory Management System}{}{Personal (\href{https://github.com/ShaheerLuqman/LushWear-IMS}{GitHub})}{}
-\begin{tight}
-  \item Built backend APIs in \textbf{FastAPI} for products, search, and stock movement.
-  \item Developed a desktop \textbf{Electron} frontend with a modern dark UI, integrating \textbf{Supabase} for persistence.
-\end{tight}
 
-\entry{Fashion Industry Recommender System}{}{Personal (\href{https://github.com/ShaheerLuqman/Fashion-Industry-RS}{GitHub})}{}
-\begin{tight}
-  \item A CNN-powered recommender using deep-learning visual embeddings to generate personalized item suggestions.
-  \item Created a Python app interface to surface tailored product suggestions.
-\end{tight}
-
-\entry{Contacts Organizer}{}{Personal (\href{https://github.com/ShaheerLuqman/Contacts_Organizer}{GitHub})}{}
-\begin{tight}
-  \item A C++ contact manager with CRUD, search/sorting, and CSV-based persistence with backup handling.
-\end{tight}
+\vspace{2pt}
+{\color{body}Explore more projects on my \href{https://muhammad-shaheer-portfolio.vercel.app/}{portfolio} and \href{https://github.com/ShaheerLuqman}{GitHub}.}
 
 %------------------------------- Skills --------------------------------------
 \section{Skills}
