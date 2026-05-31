@@ -22,7 +22,7 @@ const experiences = [
     company: "Confinality",
     role: "Management Trainee Officer (MTO)",
     period: "Jul 2025 – Oct 2025",
-    type: "Contract · Remote",
+    type: "Contract (Part-time, Evening Shift) · Remote",
     description:
       "Completed the MTO program while contributing to NLP and speech-focused AI workflows in a fast-paced production environment.",
     highlights: [

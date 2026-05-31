@@ -94,15 +94,15 @@
 % previous paragraph, removes the inter-paragraph \parskip, and inserts a
 % single fixed \entryskip so every entry boundary has identical spacing
 % regardless of what content (bullets, chips, description) precedes it.
-\newlength{\entryskip}\setlength{\entryskip}{2.5pt}
+\newlength{\entryskip}\setlength{\entryskip}{1pt}
 \newcommand{\entry}[4]{%
-  \par\vspace{-\parskip}\vspace{\entryskip}%
+  \par\vspace{-\parskip}\vspace{\entryskip}\vspace{-3pt}%
   \entryline{#1}{#2}%
   \subline{#3}%
   \metaline{#4}%
 }
 % Use right after \section to cancel the leading gap on the first entry.
-\newcommand{\firstentry}{\vspace{-\entryskip}}
+\newcommand{\firstentry}{\vspace{3\entryskip}}
 
 % Bullet list tuned tight
 \newlist{tight}{itemize}{1}
@@ -162,8 +162,8 @@ to in-house frontend/backend software, and researching robot manipulation and Vi
 {\footnotesize\chip{Python}\chip{PyTorch}\chip{Computer Vision}\chip{VLMs}\chip{Full-Stack}\chip{Vue.js}\chip{Django}\chip{AWS}\chip{RunPod}\chip{Reinforcement Learning}\chip{Robotics}}
 
 \entry{Management Trainee Officer (MTO) \textnormal{\small— Confinality}}{Jul 2025 -- Oct 2025}%
-{}{Contract \textbullet\ Remote}
-Completed the \textbf{MTO} program while contributing to \textbf{NLP and speech-focused AI} workflows in production.
+{}{Contract (Part-time, Evening Shift) \textbullet\ Remote}
+Completed \textbf{MTO} trainee program while contributing to \textbf{NLP and speech-focused AI} workflows in production.
 \begin{tight}
   \item Selected in a highly competitive MTO cohort.
   \item Built and supported \textbf{NLP} tasks including \textbf{sentiment analysis, speech detection, and transcription} pipelines.
@@ -182,20 +182,6 @@ Contributed to \textbf{industrial-scale AI systems} across computer vision, NLP,
 \vspace{2pt}
 {\footnotesize\chip{Python}\chip{Django}\chip{Computer Vision}\chip{LLMs}\chip{Backend}\chip{MediaPipe}\chip{Excel Automation}}
 
-%------------------------------- Education -----------------------------------
-\section{Education}
-\firstentry
-\entry{BS Computer Science \textnormal{\small— FAST NUCES}}{Sep 2021 -- Aug 2025}%
-{}{CGPA: 3.90 / 4.00}
-\begin{tight}
-  \item Summa Cum Laude Honors.
-  \item Rector's List (4.0 GPA) — 4 semesters.
-  \item Dean's List (3.5+ GPA) — 4 semesters.
-\end{tight}
-
-\entry{A Levels \textnormal{\small— Generation's School}}{}{}{Grades: A*, 2A}
-\entry{O Levels \textnormal{\small— Habib Public School}}{}{}{Grades: 4A*, 2A, 3B}
-
 %------------------------- Research & Publications ---------------------------
 \section{Research \& Publications}
 \firstentry
@@ -212,7 +198,6 @@ robot hand. On the D4RL benchmarks it outperforms the non-hierarchical MAQ basel
 while matching or exceeding success rates, generalizing across IQL, SAC, and RLPD.
 \href{https://arxiv.org/abs/2604.15196}{View on arXiv}
 
-\clearpage
 \entry{Ensuring Child Safety: An IoT-Based Surveillance System for Remote Monitoring and Detection of Anomalous Behavior}{2024}%
 {
 \vspace{2pt}ICETST 2024 \textbullet\ IEEE Xplore}{}
@@ -223,6 +208,15 @@ software components, and AI-driven anomaly detection to deliver real-time safety
 \vspace{2pt}
 {\color{heading}\textbf{Research Interests:}}\ {\color{body}Robotics, Reinforcement Learning, Computer Vision,
 Temporal Video Understanding, Vector Quantization, IoT + AI Systems, Vision-Language Models.}
+
+%------------------------------- Education -----------------------------------
+\section{Education}
+\firstentry
+\entry{BS Computer Science \textnormal{\small— FAST NUCES}}{Sep 2021 -- Aug 2025}%
+{}{CGPA: \textbf{3.90 / 4.00 - Summa Cum Laude Honors}}
+
+\entry{A Levels \textnormal{\small— Generation's School}}{}{}{Grades: A*, 2A}
+\entry{O Levels \textnormal{\small— Habib Public School}}{}{}{Grades: 4A*, 2A, 3B}
 
 %------------------------------- Projects ------------------------------------
 \section{Projects}
@@ -262,21 +256,22 @@ A generative AI platform for marketing content (images/video), built for real-wo
 
 \newcommand{\skillrow}[2]{\noindent{\color{heading}\textbf{#1}}\hspace{4pt}{\color{body}#2}\par\vspace{1pt}}
 
-\skillrow{AI / Machine Learning}{PyTorch, Scikit-learn, Hugging Face; Computer Vision (YOLO, MediaPipe); Diffusion Models (Stable Diffusion); NLP (BERT, Whisper, 11Labs); Reinforcement Learning (IQL, SAC, RLPD); Robotics \& Robot Manipulation; LLM Prompt Engineering.}
+\skillrow{AI / Machine Learning}{PyTorch, Scikit-learn, Hugging Face; Computer Vision (YOLO, MediaPipe); Diffusion Models (Stable Diffusion); NLP (BERT, Whisper, ElevenLabs); Reinforcement Learning (IQL, SAC, RLPD); Robotics \& Robot Manipulation; LLM Prompt Engineering.}
 \skillrow{Software Engineering}{Backend (Django, Flask, FastAPI, Express.js); Frontend (React, Next.js, Vue); REST APIs, GraphQL; Postman; Databases (MySQL, MongoDB, Oracle SQL, PostgreSQL); Cloud (AWS, RunPod); System Design.}
 \skillrow{Systems \& Tools}{Selenium (Web Automation), Arduino Programming, Assembly Language, IoT Systems, Git \& Version Control, Linux, Docker.}
 \skillrow{Programming Languages}{Python, C / C++, JavaScript.}
+\skillrow{Soft Skills}{Client-Facing \& Stakeholder Communication, Attention to Detail, Ownership \& Accountability}
 
 %--------------------------- Honors & Awards ---------------------------------
 \section{Honors \& Awards}
 \begin{tight}
-  \item \textbf{Gold Medal} — ICPC National Competitive Programming \textit{(Nov 2024)}
+  \item \textbf{ICPC Gold Medalist} — ICPC National Competitive Programming \textit{(Nov 2024)}
   \item \textbf{Summa Cum Laude} — Graduated with a high GPA (3.90 / 4.00), FAST NUCES \textit{(2025)}
-  \item \textbf{Bronze Medal} — ICPC National Competitive Programming \textit{(Feb 2024)}
+  \item \textbf{ICPC Bronze Medalist} — ICPC National Competitive Programming \textit{(Feb 2024)}
   \item \textbf{Winner} — Code Sprint, PROCOM 2023 \textit{(2023)}
   \item \textbf{Best Team Award} — Coder's Cup, ACM FAST
-  \item \textbf{Rector's List (4.0 GPA)} — FAST NUCES, 4 semesters
-  \item \textbf{Dean's List (3.5+ GPA)} — FAST NUCES, 4 semesters
+  \item \textbf{4x Rector's List (4.0 GPA)} — FAST NUCES, 4 semesters
+  \item \textbf{4x Dean's List (3.5+ GPA)} — FAST NUCES, 4 semesters
 \end{tight}
 
 %----------------------- Leadership & Volunteer ------------------------------

@@ -6,7 +6,7 @@ const skillGroups = [
       "PyTorch", "Scikit-learn", "Hugging Face",
       "Computer Vision: YOLO, MediaPipe",
       "Diffusion Models: Stable Diffusion",
-      "NLP: BERT, Whisper, 11Labs",
+      "NLP: BERT, Whisper, ElevenLabs",
       "Reinforcement Learning: IQL, SAC, RLPD",
       "Robotics & Robot Manipulation",
       "LLM Prompt Engineering",
