@@ -32,7 +32,13 @@
 \setlength{\multicolsep}{2pt}
 \setlength{\columnsep}{1.2em}
 % Tight paragraph spacing to compress the document to two pages.
-\setlength{\parskip}{2pt plus 1pt minus 1pt}
+\setlength{\parskip}{1pt plus 1pt minus 1pt}
+
+% Consistent inter-line spacing across the whole document.
+% Fixed leading so every multi-line paragraph (descriptions, skills, research
+% interests, etc.) wraps with the same line spacing regardless of font size.
+\usepackage{setspace}
+\setstretch{1.08}
 
 %------------------------------- Colors --------------------------------------
 \definecolor{accent}{HTML}{3F63AD}   % portfolio primary blue
@@ -51,13 +57,17 @@
   pdftitle={Muhammad Shaheer Luqman — Resume},
   pdfauthor={Muhammad Shaheer Luqman}
 }
+% Underline + italicize hyperlink text (in addition to the accent color).
+\usepackage[normalem]{ulem}
+\let\orighref\href
+\renewcommand{\href}[2]{\orighref{#1}{\uline{\textit{#2}}}}
 
 %------------------------------- Section style -------------------------------
 \titleformat{\section}
   {\Large\bfseries\color{heading}}
   {}{0em}
-  {}[\vspace{2pt}{\color{rule}\titlerule[1.2pt]}\vspace{-2pt}]
-\titlespacing*{\section}{0pt}{7pt}{3pt}
+  {}[\vspace{2pt}{\color{rule}\titlerule[1.2pt]}]
+\titlespacing*{\section}{0pt}{6pt}{5pt}
 
 % Default body color
 \AtBeginDocument{\color{body}}
@@ -82,10 +92,8 @@
 \newcommand{\metaline}[1]{\ifblank{#1}{}{{\color{muted}\small #1}\par}}
 \newcommand{\entry}[4]{%
   \entryline{#1}{#2}%
-  \vspace{2pt}%
   \subline{#3}%
   \metaline{#4}%
-  \vspace{1pt}%
 }
 
 % Bullet list tuned tight
@@ -104,7 +112,7 @@
 %------------------------------- Header --------------------------------------
 {\fontsize{30}{34}\selectfont\bfseries\color{accent}Muhammad Shaheer Luqman}
 
-\vspace{4pt}
+\vspace{2pt}
 {\color{body}Driven Software \& Applied AI Engineer building production-grade AI systems and
 end-to-end solutions for real-world industrial problems. Strong in problem-solving, system
 design, computer vision, NLP, and full-stack development.}
@@ -139,7 +147,7 @@ to in-house frontend/backend software, and researching Robot Manipulation and Vi
 \vspace{2pt}
 {\footnotesize\chip{Python}\chip{PyTorch}\chip{Computer Vision}\chip{VLMs}\chip{Full-Stack}\chip{Vue.js}\chip{Django}\chip{AWS}\chip{RunPod}}
 
-\vspace{4pt}
+\vspace{2pt}
 \entry{Management Trainee Officer (MTO) \textnormal{\small— Confinality}}{Jul 2025 -- Oct 2025}%
 {}{Contract \textbullet\ Remote}
 Completed the MTO program while contributing to NLP and speech-focused AI workflows in production.
@@ -151,7 +159,7 @@ Completed the MTO program while contributing to NLP and speech-focused AI workfl
 \vspace{2pt}
 {\footnotesize\chip{NLP}\chip{Voice Generation}\chip{Sentiment Analysis}\chip{Speech Detection}\chip{Transcription}\chip{AI Calling Agents}}
 
-\vspace{4pt}
+\vspace{2pt}
 \entry{Applied Research Engineer (Intern) \textnormal{\small— Retrocausal}}{Mar 2024 -- Jun 2024}%
 {}{Internship \textbullet\ US-based (Remote)}
 Contributed to industrial-scale AI systems across computer vision, NLP, and LLM workflows.
@@ -173,11 +181,7 @@ Contributed to industrial-scale AI systems across computer vision, NLP, and LLM 
   \item Dean's List (3.5+ GPA) — 4 semesters.
 \end{tight}
 
-\vspace{3pt}
 \entry{A Levels \textnormal{\small— Generation's School}}{}{}{Grades: A*, 2A}
-
-\vspace{4pt}
-\entry{O Levels \textnormal{\small— Habib Public School}}{}{}{Grades: 4A*, 2A, 3B}
 
 %------------------------- Research & Publications ---------------------------
 \section{Research \& Publications}
@@ -194,14 +198,14 @@ Proposed an intelligent IoT-based system for remote child monitoring, combining 
 software components, and AI-driven anomaly detection to deliver real-time safety alerts.
 \href{https://ieeexplore.ieee.org/document/10737980}{View on IEEE Xplore}
 
-\vspace{4pt}
+\vspace{2pt}
 {\color{heading}\textbf{Research Interests:}}\ {\color{body}Robotics, Computer Vision, Temporal Video
 Understanding, Vector Quantization, IoT + AI Systems, Vision-Language Models.}
 
 %------------------------------- Projects ------------------------------------
 \section{Projects}
 
-\entry{PixelForge — Digital Marketing Tool Using GenAI}{}{Final Year Project \href{https://github.com/ShaheerLuqman/PixelForge}{\textnormal{(GitHub)}}}{}
+\entry{PixelForge — Digital Marketing Tool Using GenAI}{}{Final Year Project (\href{https://github.com/ShaheerLuqman/PixelForge}{GitHub})}{}
 A generative AI platform for marketing content (images/video), built for real-world workflows.
 \begin{tight}
   \item Built a full-stack system using \textbf{React + Flask}, integrating \textbf{Stable Diffusion} for AI image generation.
@@ -209,34 +213,34 @@ A generative AI platform for marketing content (images/video), built for real-wo
 \end{tight}
 
 \vspace{2pt}
-\entry{Crypto Trading Simulator}{}{Personal \href{https://github.com/ShaheerLuqman/Crypto-Trading-Simulator}{\textnormal{(GitHub)}}}{}
+\entry{Crypto Trading Simulator}{}{Personal (\href{https://github.com/ShaheerLuqman/Crypto-Trading-Simulator}{GitHub})}{}
 \begin{tight}
   \item Built a simulated crypto-trading platform on the \textbf{MERN} stack with real-time market-data APIs.
   \item Designed an intuitive UI using Ant Design and implemented database-backed simulation logic.
 \end{tight}
 
 \vspace{2pt}
-\entry{LushWear-IMS — Inventory Management System}{}{Personal \href{https://github.com/ShaheerLuqman/LushWear-IMS}{\textnormal{(GitHub)}}}{}
+\entry{LushWear-IMS — Inventory Management System}{}{Personal (\href{https://github.com/ShaheerLuqman/LushWear-IMS}{GitHub})}{}
 \begin{tight}
   \item Built backend APIs in \textbf{FastAPI} for products, search, and stock movement.
   \item Developed a desktop \textbf{Electron} frontend with a modern dark UI, integrating \textbf{Supabase} for persistence.
 \end{tight}
 
 \vspace{2pt}
-\entry{Fashion Industry Recommender System}{}{Personal \href{https://github.com/ShaheerLuqman/Fashion-Industry-RS}{\textnormal{(GitHub)}}}{}
+\entry{Fashion Industry Recommender System}{}{Personal (\href{https://github.com/ShaheerLuqman/Fashion-Industry-RS}{GitHub})}{}
 \begin{tight}
   \item A CNN-powered recommender using deep-learning visual embeddings to generate personalized item suggestions.
   \item Created a Python app interface to surface tailored product suggestions.
 \end{tight}
 
 \vspace{2pt}
-\entry{Phishing Detection Web App}{}{Personal \href{https://github.com/ShaheerLuqman/phish_detector}{\textnormal{(GitHub)}}}{}
+\entry{Phishing Detection Web App}{}{Personal (\href{https://github.com/ShaheerLuqman/phish_detector}{GitHub})}{}
 \begin{tight}
   \item Developed a Python phishing-classification workflow with a web-facing interface for quick URL/content checks.
 \end{tight}
 
 \vspace{2pt}
-\entry{Contacts Organizer}{}{Personal \href{https://github.com/ShaheerLuqman/Contacts_Organizer}{\textnormal{(GitHub)}}}{}
+\entry{Contacts Organizer}{}{Personal (\href{https://github.com/ShaheerLuqman/Contacts_Organizer}{GitHub})}{}
 \begin{tight}
   \item A C++ contact manager with CRUD, search/sorting, and CSV-based persistence with backup handling.
 \end{tight}
