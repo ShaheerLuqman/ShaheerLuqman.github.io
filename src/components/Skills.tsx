@@ -7,6 +7,8 @@ const skillGroups = [
       "Computer Vision: YOLO, MediaPipe",
       "Diffusion Models: Stable Diffusion",
       "NLP: BERT, Whisper, 11Labs",
+      "Reinforcement Learning: IQL, SAC, RLPD",
+      "Robotics & Robot Manipulation",
       "LLM Prompt Engineering",
     ],
   },

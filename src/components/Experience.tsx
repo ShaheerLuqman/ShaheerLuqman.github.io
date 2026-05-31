@@ -7,12 +7,12 @@ const experiences = [
     description:
       "Continuing as a full-time engineer building production-grade AI systems and end-to-end solutions for real-world industrial use cases, while contributing to in-house software across both frontend and backend. Also doing ongoing research in Robot Manipulation and Vision-Language-Action systems.",
     highlights: [
-      "Delivered a complete AI-powered solution for BMW — designed and implemented frontend, backend, and AI components across the full lifecycle",
+      "Delivered a complete AI-powered solution for BMW — building frontend, backend, and AI components end-to-end",
       "Worked on in-house software for both frontend and backend, providing support for various development tasks",
       "Helped support deployments by working with various AWS products and RunPod infrastructure",
-      "Conducted research on unsupervised action segmentation and temporal long-video understanding",
+      "Conducted research on unsupervised action segmentation, temporal long-video understanding, robot manipulation, and reinforcement learning — co-authoring two papers (see Research & Publications)",
     ],
-    tech: ["Python", "PyTorch", "Computer Vision", "VLMs", "Full-Stack", "Vue.js", "Django", "AWS", "RunPod"],
+    tech: ["Python", "PyTorch", "Computer Vision", "VLMs", "Reinforcement Learning", "Robotics", "Full-Stack", "Vue.js", "Django", "AWS", "RunPod"],
     companyLogo: "/assets/retrocausal_ai_logo.jpg",
     companyLink: "https://retrocausal.ai/",
     companyLinkedIn: "https://www.linkedin.com/company/retrocausal-ai/",

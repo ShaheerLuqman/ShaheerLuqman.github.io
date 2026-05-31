@@ -38,7 +38,7 @@
 % Fixed leading so every multi-line paragraph (descriptions, skills, research
 % interests, etc.) wraps with the same line spacing regardless of font size.
 \usepackage{setspace}
-\setstretch{1.08}
+\setstretch{1.0}
 
 %------------------------------- Colors --------------------------------------
 \definecolor{accent}{HTML}{3F63AD}   % portfolio primary blue
@@ -67,7 +67,7 @@
   {\Large\bfseries\color{heading}}
   {}{0em}
   {}[\vspace{2pt}{\color{rule}\titlerule[1.2pt]}]
-\titlespacing*{\section}{0pt}{6pt}{5pt}
+\titlespacing*{\section}{0pt}{5pt}{4pt}
 
 % Default body color
 \AtBeginDocument{\color{body}}
@@ -90,21 +90,35 @@
 }
 \newcommand{\subline}[1]{\ifblank{#1}{}{{\color{accent}\itshape #1}\par}}
 \newcommand{\metaline}[1]{\ifblank{#1}{}{{\color{muted}\small #1}\par}}
+% Consistent gap before every entry across all sections. \entry ends the
+% previous paragraph, removes the inter-paragraph \parskip, and inserts a
+% single fixed \entryskip so every entry boundary has identical spacing
+% regardless of what content (bullets, chips, description) precedes it.
+\newlength{\entryskip}\setlength{\entryskip}{2.5pt}
 \newcommand{\entry}[4]{%
+  \par\vspace{-\parskip}\vspace{\entryskip}%
   \entryline{#1}{#2}%
   \subline{#3}%
   \metaline{#4}%
 }
+% Use right after \section to cancel the leading gap on the first entry.
+\newcommand{\firstentry}{\vspace{-\entryskip}}
 
 % Bullet list tuned tight
 \newlist{tight}{itemize}{1}
 \setlist[tight]{leftmargin=1.2em,itemsep=0.5pt,topsep=1pt,parsep=0pt,partopsep=0pt,
   label={\color{accent}\footnotesize$\blacktriangleright$}}
 
-% Tech / skill chip
-\newcommand{\chip}[1]{\colorbox{chipbg}{\color{accentdk}\small\,#1\,}\hspace{2pt}}
+% Tech / skill chip — \strut forces a constant box height/depth so every chip
+% has the same vertical size regardless of ascenders/descenders in the text.
+\newcommand{\chip}[1]{%
+  \setlength{\fboxsep}{2pt}%
+  \colorbox{chipbg}{\color{accentdk}\small\strut\,#1\,}\hspace{2pt}}
 
 \setlength{\parindent}{0pt}
+
+% Remove page numbers.
+\pagestyle{empty}
 
 %==============================================================================
 \begin{document}
@@ -117,7 +131,7 @@
 end-to-end solutions for real-world industrial problems. Strong in problem-solving, system
 design, computer vision, NLP, and full-stack development.}
 
-\vspace{3pt}
+\vspace{2pt}
 {\color{heading}%
 \faEnvelope[regular]\; \href{mailto:muhammadshaheerluqman@gmail.com}{muhammadshaheerluqman@gmail.com}
 \quad\textbar\quad
@@ -133,36 +147,34 @@ design, computer vision, NLP, and full-stack development.}
 
 %------------------------------- Experience ----------------------------------
 \section{Experience}
-
+\firstentry
 \entry{Applied Research Engineer (Full-Time) \textnormal{\small— Retrocausal}}{Jun 2025 -- Present}%
 {}{Full-Time \textbullet\ US-based (Remote)}
-Building production-grade AI systems and end-to-end solutions for industrial use cases, contributing
-to in-house frontend/backend software, and researching Robot Manipulation and Vision-Language-Action systems.
+Building \textbf{production-grade AI systems} and end-to-end solutions for industrial use cases, contributing
+to in-house frontend/backend software, and researching robot manipulation and Vision-Language-Action systems.
 \begin{tight}
-  \item Delivered a complete AI-powered solution for \textbf{BMW} — designed and implemented frontend, backend, and AI components across the full lifecycle.
-  \item Worked on in-house software for both frontend and backend, supporting a range of development tasks.
+  \item Delivered a complete AI-powered solution for \textbf{BMW}, building frontend, backend, and AI components end-to-end.
+  \item Worked on in-house software for both \textbf{frontend and backend}, supporting a range of development tasks.
   \item Supported deployments using various \textbf{AWS} products and \textbf{RunPod} infrastructure.
-  \item Conducted research on unsupervised action segmentation and temporal long-video understanding.
+  \item Conducted \textbf{research} on unsupervised action segmentation, temporal long-video understanding, robot manipulation, and reinforcement learning, \textbf{publishing two papers} (see \textit{Research \& Publications}).
 \end{tight}
 \vspace{2pt}
-{\footnotesize\chip{Python}\chip{PyTorch}\chip{Computer Vision}\chip{VLMs}\chip{Full-Stack}\chip{Vue.js}\chip{Django}\chip{AWS}\chip{RunPod}}
+{\footnotesize\chip{Python}\chip{PyTorch}\chip{Computer Vision}\chip{VLMs}\chip{Full-Stack}\chip{Vue.js}\chip{Django}\chip{AWS}\chip{RunPod}\chip{Reinforcement Learning}\chip{Robotics}}
 
-\vspace{2pt}
 \entry{Management Trainee Officer (MTO) \textnormal{\small— Confinality}}{Jul 2025 -- Oct 2025}%
 {}{Contract \textbullet\ Remote}
-Completed the MTO program while contributing to NLP and speech-focused AI workflows in production.
+Completed the \textbf{MTO} program while contributing to \textbf{NLP and speech-focused AI} workflows in production.
 \begin{tight}
   \item Selected in a highly competitive MTO cohort.
-  \item Built and supported NLP tasks including sentiment analysis, speech detection, and transcription pipelines.
-  \item Worked on voice generation systems and AI calling agent creation.
+  \item Built and supported \textbf{NLP} tasks including \textbf{sentiment analysis, speech detection, and transcription} pipelines.
+  \item Worked on \textbf{voice generation} systems and \textbf{AI calling agent} creation.
 \end{tight}
 \vspace{2pt}
 {\footnotesize\chip{NLP}\chip{Voice Generation}\chip{Sentiment Analysis}\chip{Speech Detection}\chip{Transcription}\chip{AI Calling Agents}}
 
-\vspace{2pt}
 \entry{Applied Research Engineer (Intern) \textnormal{\small— Retrocausal}}{Mar 2024 -- Jun 2024}%
 {}{Internship \textbullet\ US-based (Remote)}
-Contributed to industrial-scale AI systems across computer vision, NLP, and LLM workflows.
+Contributed to \textbf{industrial-scale AI systems} across computer vision, NLP, and LLM workflows.
 \begin{tight}
   \item Built an end-to-end video activity recognition pipeline using \textbf{Body Pose Estimation} + \textbf{Vision-Language Models}, translating visual and textual data into PMTS codes for industrial process optimization.
   \item Developed \textbf{LLM-based prompt engineering} systems with automated Excel report generation and visual analytics.
@@ -172,7 +184,7 @@ Contributed to industrial-scale AI systems across computer vision, NLP, and LLM 
 
 %------------------------------- Education -----------------------------------
 \section{Education}
-
+\firstentry
 \entry{BS Computer Science \textnormal{\small— FAST NUCES}}{Sep 2021 -- Aug 2025}%
 {}{CGPA: 3.90 / 4.00}
 \begin{tight}
@@ -182,29 +194,39 @@ Contributed to industrial-scale AI systems across computer vision, NLP, and LLM 
 \end{tight}
 
 \entry{A Levels \textnormal{\small— Generation's School}}{}{}{Grades: A*, 2A}
+\entry{O Levels \textnormal{\small— Habib Public School}}{}{}{Grades: 4A*, 2A, 3B}
 
 %------------------------- Research & Publications ---------------------------
 \section{Research \& Publications}
-
+\firstentry
 \entry{Unsupervised Skeleton-Based Action Segmentation via Hierarchical Spatiotemporal Vector Quantization}{2026}%
-{arXiv:2604.15196}{}
+{arXiv 2026}{}
 A hierarchical spatiotemporal vector quantization framework for unsupervised skeleton-based temporal
 action segmentation, achieving SOTA on the HuGaDB, LARa, and BABEL benchmarks. \href{https://arxiv.org/abs/2604.15196}{View on arXiv}
 
-\vspace{3pt}
+\entry{Enhancing Human-Likeness in Reinforcement Learning Agents via Hierarchical Macro Action Quantization}{2026}%
+{arXiv 2026}{}
+A human-like RL framework that encodes human demonstrations into macro actions via a two-level
+hierarchical macro action quantization approach (HiMAQ), applied to dexterous control of a humanoid
+robot hand. On the D4RL benchmarks it outperforms the non-hierarchical MAQ baseline on human-likeness
+while matching or exceeding success rates, generalizing across IQL, SAC, and RLPD.
+\href{https://arxiv.org/abs/2604.15196}{View on arXiv}
+
+\clearpage
 \entry{Ensuring Child Safety: An IoT-Based Surveillance System for Remote Monitoring and Detection of Anomalous Behavior}{2024}%
-{ICETST 2024 \textbullet\ IEEE Xplore}{}
+{
+\vspace{2pt}ICETST 2024 \textbullet\ IEEE Xplore}{}
 Proposed an intelligent IoT-based system for remote child monitoring, combining hardware sensors,
 software components, and AI-driven anomaly detection to deliver real-time safety alerts.
 \href{https://ieeexplore.ieee.org/document/10737980}{View on IEEE Xplore}
 
 \vspace{2pt}
-{\color{heading}\textbf{Research Interests:}}\ {\color{body}Robotics, Computer Vision, Temporal Video
-Understanding, Vector Quantization, IoT + AI Systems, Vision-Language Models.}
+{\color{heading}\textbf{Research Interests:}}\ {\color{body}Robotics, Reinforcement Learning, Computer Vision,
+Temporal Video Understanding, Vector Quantization, IoT + AI Systems, Vision-Language Models.}
 
 %------------------------------- Projects ------------------------------------
 \section{Projects}
-
+\firstentry
 \entry{PixelForge — Digital Marketing Tool Using GenAI}{}{Final Year Project (\href{https://github.com/ShaheerLuqman/PixelForge}{GitHub})}{}
 A generative AI platform for marketing content (images/video), built for real-world workflows.
 \begin{tight}
@@ -212,34 +234,24 @@ A generative AI platform for marketing content (images/video), built for real-wo
   \item Developed pipelines for automated ad content generation (image/video).
 \end{tight}
 
-\vspace{2pt}
 \entry{Crypto Trading Simulator}{}{Personal (\href{https://github.com/ShaheerLuqman/Crypto-Trading-Simulator}{GitHub})}{}
 \begin{tight}
   \item Built a simulated crypto-trading platform on the \textbf{MERN} stack with real-time market-data APIs.
   \item Designed an intuitive UI using Ant Design and implemented database-backed simulation logic.
 \end{tight}
 
-\vspace{2pt}
 \entry{LushWear-IMS — Inventory Management System}{}{Personal (\href{https://github.com/ShaheerLuqman/LushWear-IMS}{GitHub})}{}
 \begin{tight}
   \item Built backend APIs in \textbf{FastAPI} for products, search, and stock movement.
   \item Developed a desktop \textbf{Electron} frontend with a modern dark UI, integrating \textbf{Supabase} for persistence.
 \end{tight}
 
-\vspace{2pt}
 \entry{Fashion Industry Recommender System}{}{Personal (\href{https://github.com/ShaheerLuqman/Fashion-Industry-RS}{GitHub})}{}
 \begin{tight}
   \item A CNN-powered recommender using deep-learning visual embeddings to generate personalized item suggestions.
   \item Created a Python app interface to surface tailored product suggestions.
 \end{tight}
 
-\vspace{2pt}
-\entry{Phishing Detection Web App}{}{Personal (\href{https://github.com/ShaheerLuqman/phish_detector}{GitHub})}{}
-\begin{tight}
-  \item Developed a Python phishing-classification workflow with a web-facing interface for quick URL/content checks.
-\end{tight}
-
-\vspace{2pt}
 \entry{Contacts Organizer}{}{Personal (\href{https://github.com/ShaheerLuqman/Contacts_Organizer}{GitHub})}{}
 \begin{tight}
   \item A C++ contact manager with CRUD, search/sorting, and CSV-based persistence with backup handling.
@@ -250,7 +262,7 @@ A generative AI platform for marketing content (images/video), built for real-wo
 
 \newcommand{\skillrow}[2]{\noindent{\color{heading}\textbf{#1}}\hspace{4pt}{\color{body}#2}\par\vspace{1pt}}
 
-\skillrow{AI / Machine Learning}{PyTorch, Scikit-learn, Hugging Face; Computer Vision (YOLO, MediaPipe); Diffusion Models (Stable Diffusion); NLP (BERT, Whisper, 11Labs); LLM Prompt Engineering.}
+\skillrow{AI / Machine Learning}{PyTorch, Scikit-learn, Hugging Face; Computer Vision (YOLO, MediaPipe); Diffusion Models (Stable Diffusion); NLP (BERT, Whisper, 11Labs); Reinforcement Learning (IQL, SAC, RLPD); Robotics \& Robot Manipulation; LLM Prompt Engineering.}
 \skillrow{Software Engineering}{Backend (Django, Flask, FastAPI, Express.js); Frontend (React, Next.js, Vue); REST APIs, GraphQL; Postman; Databases (MySQL, MongoDB, Oracle SQL, PostgreSQL); Cloud (AWS, RunPod); System Design.}
 \skillrow{Systems \& Tools}{Selenium (Web Automation), Arduino Programming, Assembly Language, IoT Systems, Git \& Version Control, Linux, Docker.}
 \skillrow{Programming Languages}{Python, C / C++, JavaScript.}
@@ -263,12 +275,12 @@ A generative AI platform for marketing content (images/video), built for real-wo
   \item \textbf{Bronze Medal} — ICPC National Competitive Programming \textit{(Feb 2024)}
   \item \textbf{Winner} — Code Sprint, PROCOM 2023 \textit{(2023)}
   \item \textbf{Best Team Award} — Coder's Cup, ACM FAST
-  \item \textbf{Rector's List (4.0 GPA)} — FAST NUCES, 4 semesters \quad\textbullet\quad \textbf{Dean's List (3.5+ GPA)} — FAST NUCES, 4 semesters
+  \item \textbf{Rector's List (4.0 GPA)} — FAST NUCES, 4 semesters
+  \item \textbf{Dean's List (3.5+ GPA)} — FAST NUCES, 4 semesters
 \end{tight}
 
 %----------------------- Leadership & Volunteer ------------------------------
 \section{Leadership \& Volunteer Experience}
-\begin{multicols}{2}
 \begin{tight}
   \item \textbf{Director Technical Affairs} — Developers Day'25
   \item \textbf{Technical Lead} — ACM NUCES
@@ -276,6 +288,5 @@ A generative AI platform for marketing content (images/video), built for real-wo
   \item \textbf{CS Competition Co-Head} — PROCOM'24
   \item \textbf{Training \& Mentorship Head} — ACM NUCES
 \end{tight}
-\end{multicols}
 
 \end{document}
