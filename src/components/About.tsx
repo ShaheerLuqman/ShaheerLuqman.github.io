@@ -3,7 +3,7 @@ const highlights = [
   { label: "Focus", value: "Applied AI & Software Engineering" },
   { label: "ICPC", value: "Gold Medalist" },
   { label: "CGPA", value: "3.90 / 4.00 — FAST NUCES" },
-  { label: "Research", value: "IEEE Xplore Published" },
+  { label: "Research", value: "Published — 2× arXiv, IEEE" },
   { label: "Specialization", value: "CV · NLP · Software Engineering" },
 ];
 
@@ -22,18 +22,18 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-[#5a6a8a] leading-relaxed">
               <p>
-                I&apos;m a Software Engineer currently working as an{" "}
+                I&apos;m an Applied AI &amp; Software Engineer who ships end-to-end computer vision, NLP,
+                and reinforcement learning systems for industrial clients — currently an{" "}
                 <span className="text-[#3f63ad] font-medium">Applied Research Engineer at Retrocausal</span>,
-                a US-based company, building production-grade AI systems for real-world industrial
-                use cases. My work spans computer vision, NLP, LLMs, and full-stack development.
+                a US-based company. My work spans research through to full-stack delivery and cloud
+                deployment.
               </p>
               <p>
-                I hold a{" "}
-                <span className="text-[#3f63ad] font-medium">CGPA of 3.90/4.00</span> from FAST NUCES,
-                am a{" "}
-                <span className="text-[#3f63ad] font-medium">Gold Medalist at ICPC National 2024</span>,
-                and a published researcher in{" "}
-                <span className="text-[#3f63ad] font-medium">IEEE Xplore (ICETST 2024)</span>.
+                I&apos;m a published researcher (
+                <span className="text-[#3f63ad] font-medium">2× arXiv, IEEE</span>), an{" "}
+                <span className="text-[#3f63ad] font-medium">ICPC Gold Medalist</span>, and a{" "}
+                <span className="text-[#3f63ad] font-medium">summa cum laude</span> graduate with a{" "}
+                <span className="text-[#3f63ad] font-medium">3.90/4.00 CGPA</span> from FAST NUCES.
               </p>
               <p>
                 Whether it&apos;s designing full-stack AI pipelines, researching temporal video

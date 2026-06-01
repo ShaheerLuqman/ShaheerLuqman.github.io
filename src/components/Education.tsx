@@ -11,7 +11,7 @@ const education = [
   {
     degree: "BS Computer Science",
     institution: "FAST NUCES",
-    period: "Sep 2021 – Aug 2025",
+    period: "Sep 2021 – Jun 2025",
     grade: "CGPA: 3.90 / 4.00",
     documents: [
       {

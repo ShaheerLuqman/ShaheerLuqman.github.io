@@ -1,16 +1,16 @@
 const experiences = [
   {
     company: "Retrocausal",
-    role: "Applied Research Engineer (Full-Time)",
+    role: "Applied Research Engineer",
     period: "Jun 2025 – Present",
-    type: "Full-Time · US-based (Remote)",
+    type: "US-based · Remote",
     description:
-      "Continuing as a full-time engineer building production-grade AI systems and end-to-end solutions for real-world industrial use cases, while contributing to in-house software across both frontend and backend. Also doing ongoing research in Robot Manipulation and Vision-Language-Action systems.",
+      "Building AI systems for industrial clients end-to-end, contributing to in-house frontend/backend software, and researching robot manipulation and Vision-Language-Action systems.",
     highlights: [
-      "Delivered a complete AI-powered solution for BMW — building frontend, backend, and AI components end-to-end",
-      "Worked on in-house software for both frontend and backend, providing support for various development tasks",
-      "Helped support deployments by working with various AWS products and RunPod infrastructure",
-      "Conducted research on unsupervised action segmentation, temporal long-video understanding, robot manipulation, and reinforcement learning — co-authoring two papers (see Research & Publications)",
+      "Designed and shipped an end-to-end AI solution for BMW, owning frontend, backend, and AI components, cutting study compilation and runs from 2–3 hours of manual work to under 15 minutes",
+      "Shipped in-house full-stack features across a Vue.js frontend and Django backend, from API design to UI delivery",
+      "Deployed and scaled AI models on AWS and RunPod GPU infrastructure, achieving ~5x faster step-name recommendation inference while cutting GPU compute costs by up to 90%",
+      "Conducted research on unsupervised action segmentation, temporal long-video understanding, robot manipulation, and reinforcement learning — publishing two papers (see Research & Publications)",
     ],
     tech: ["Python", "PyTorch", "Computer Vision", "VLMs", "Reinforcement Learning", "Robotics", "Full-Stack", "Vue.js", "Django", "AWS", "RunPod"],
     companyLogo: "/assets/retrocausal_ai_logo.jpg",
@@ -20,15 +20,16 @@ const experiences = [
   },
   {
     company: "Confinality",
-    role: "Management Trainee Officer (MTO)",
-    period: "Jul 2025 – Oct 2025",
-    type: "Contract (Part-time, Evening Shift) · Remote",
+    role: "Management Trainee Officer (MTO) - AI/NLP",
+    period: "Jul 2025 – Sep 2025",
+    type: "Internship · Evening Shift · Remote",
     description:
-      "Completed the MTO program while contributing to NLP and speech-focused AI workflows in a fast-paced production environment.",
+      "Selected for the MTO trainee program, working on NLP and speech-focused AI workflows.",
     highlights: [
-      "Selected in a highly competitive MTO cohort",
-      "Built and supported NLP tasks including sentiment analysis, speech detection, and transcription pipelines",
-      "Worked on voice generation systems and AI calling agent creation",
+      "Engineered NLP pipelines for sentiment analysis, speech detection, and transcription",
+      "Developed voice generation workflows reducing manual call handling for client operations",
+      "Iteratively improved AI calling agents, raising their call transfer rate from <1% to ~6%",
+      "Delivered call-performance analysis and next-step recommendations to clients and internal teams",
     ],
     tech: ["NLP", "Voice Generation", "Sentiment Analysis", "Speech Detection", "Transcription", "AI Calling Agents"],
     companyLogo: "/assets/confinality_logo.jpg",
@@ -40,14 +41,15 @@ const experiences = [
   },
   {
     company: "Retrocausal",
-    role: "Applied Research Engineer (Intern)",
+    role: "Software Engineer Intern",
     period: "Mar 2024 – Jun 2024",
     type: "Internship · US-based (Remote)",
     description:
-      "Started at Retrocausal as an intern, contributing to industrial-scale AI systems across computer vision, NLP, and LLM workflows.",
+      "Worked on industrial-scale AI systems across computer vision, NLP, and LLM workflows.",
     highlights: [
-      "Built end-to-end video activity recognition pipeline using Body Pose Estimation + Vision-Language Models, translating visual + textual data into PMTS codes for industrial optimization",
-      "Developed LLM-based prompt engineering systems with automated Excel report generation and visual analytics",
+      "Built a video activity recognition pipeline using Body Pose Estimation and Vision-Language Models to automate PMTS code generation for industrial workflow optimization",
+      "Developed LLM-based prompt engineering systems for automated analysis of industrial process data",
+      "Generated automated Excel reports with graph and table visualizations, building 16 modules in total",
     ],
     tech: ["Python", "Django", "Computer Vision", "LLMs", "Backend Development", "MediaPipe", "Excel Automation"],
     companyLogo: "/assets/retrocausal_ai_logo.jpg",

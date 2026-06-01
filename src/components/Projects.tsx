@@ -1,15 +1,15 @@
 const projects = [
   {
-    title: "PixelForge - Digital Marketing Tool Using GenAI",
+    title: "PixelForge — AI-Driven Digital Marketing Platform",
     company: "Final Year Project",
     description:
-      "A generative AI platform for creating marketing content including images and videos. Built for real-world marketing workflows with usability and scalability in mind.",
+      "A full-stack generative AI platform for automated advertisement image and video generation, enabling users to create branded marketing content from product images with minimal manual input.",
     highlights: [
-      "Built full-stack system using React + Flask",
-      "Integrated Stable Diffusion for AI image generation",
-      "Developed pipelines for automated ad content generation (image/video)",
+      "Built a full-stack platform using React, Flask, and PostgreSQL for automated ad image and video generation",
+      "Developed AI pipelines combining BLIP captioning, Gemini-powered slogan generation, and diffusion-based image synthesis for product-aware content",
+      "Integrated RunwayML Gen-1 workflows for AI-generated promotional videos using image-conditioned prompt engineering",
     ],
-    tech: ["React", "Flask", "Stable Diffusion", "GenAI", "Python"],
+    tech: ["React", "Flask", "PostgreSQL", "BLIP", "Gemini", "Stable Diffusion", "RunwayML", "Python"],
     tag: "GenAI",
     tagStyle: "bg-purple-50 border-purple-200 text-purple-600",
     githubLink: "https://github.com/ShaheerLuqman/PixelForge",
@@ -45,31 +45,16 @@ const projects = [
   //   githubLink: "https://github.com/your-username/repo-name",
   // },
   {
-    title: "Crypto Trading Simulator",
-    company: "Personal",
+    title: "LushWear — Business Operation Management",
+    company: "Client · In Production",
     description:
-      "A simulated trading platform for learning and experimenting with crypto markets, integrating real-time APIs with an intuitive trading UI.",
+      "Built, sold, and actively maintained for a local business to manage their day-to-day operations; currently in production use. A cross-platform desktop app for inventory, orders, and storefront sync.",
     highlights: [
-      "Built using MERN stack with real-time market data APIs",
-      "Designed intuitive UI using Ant Design",
-      "Implemented database-backed trading simulation logic",
+      "Engineered scalable backend APIs in FastAPI for inventory, product catalog, stock tracking, and search",
+      "Built a cross-platform Electron desktop app with a modern responsive UI, integrating Supabase for real-time data, auth, and cloud storage",
+      "Built end-to-end order management with live tracking via courier APIs and two-way Shopify integration for storefront sync",
     ],
-    tech: ["MongoDB", "Express.js", "React", "Node.js", "Ant Design"],
-    tag: "MERN",
-    tagStyle: "bg-amber-50 border-amber-200 text-amber-600",
-    githubLink: "https://github.com/ShaheerLuqman/Crypto-Trading-Simulator",
-  },
-  {
-    title: "LushWear-IMS Inventory Management System",
-    company: "Personal",
-    description:
-      "A desktop inventory management system with a FastAPI backend, Electron frontend, and Supabase integration for managing products and stock movement.",
-    highlights: [
-      "Built backend APIs in FastAPI for products, search, and stock movement",
-      "Developed desktop frontend using Electron with a modern dark-themed UI",
-      "Integrated Supabase for cloud-hosted inventory data and persistence",
-    ],
-    tech: ["FastAPI", "Python", "Electron", "JavaScript", "Supabase"],
+    tech: ["FastAPI", "Python", "Electron", "Supabase", "Shopify", "JavaScript"],
     tag: "Desktop",
     tagStyle: "bg-cyan-50 border-cyan-200 text-cyan-700",
     githubLink: "https://github.com/ShaheerLuqman/LushWear-IMS",
@@ -88,36 +73,6 @@ const projects = [
     tag: "AI/ML",
     tagStyle: "bg-violet-50 border-violet-200 text-violet-700",
     githubLink: "https://github.com/ShaheerLuqman/Fashion-Industry-RS",
-  },
-  {
-    title: "Phishing Detection Web App",
-    company: "Personal",
-    description:
-      "A phishing detection application that classifies suspicious content and provides an accessible web interface for checking potential threats.",
-    highlights: [
-      "Developed detection workflow in Python for phishing-related classification",
-      "Implemented web-facing experience for quick URL/content safety checks",
-      "Prepared deployment configuration for hosting and accessibility",
-    ],
-    tech: ["Python", "Cyber Security", "Phishing Detection"],
-    tag: "Cyber Security",
-    tagStyle: "bg-rose-50 border-rose-200 text-rose-700",
-    githubLink: "https://github.com/ShaheerLuqman/phish_detector",
-  },
-  {
-    title: "Contacts Organizer",
-    company: "Personal",
-    description:
-      "A C++ contact management application for storing, searching, updating, and organizing personal contact records using file-backed data.",
-    highlights: [
-      "Built core contact CRUD operations with search and sorting support",
-      "Implemented CSV-based persistence with backup file handling",
-      "Structured terminal-based workflows for efficient contact management",
-    ],
-    tech: ["C++", "Data Structures", "File Handling", "CSV"],
-    tag: "Systems",
-    tagStyle: "bg-slate-100 border-slate-300 text-slate-700",
-    githubLink: "https://github.com/ShaheerLuqman/Contacts_Organizer",
   },
   // {
   //   title: "VQ-VAE / RVQ / HVQ Research",

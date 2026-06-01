@@ -101,8 +101,9 @@ export default function Hero() {
 
         {/* Tagline */}
         <p className="max-w-2xl mx-auto text-[#5a6a8a] text-base md:text-lg leading-relaxed mb-10">
-          Building production-grade AI systems and end-to-end solutions for real-world industrial
-          problems. ICPC Gold Medalist · IEEE Published · CGPA 3.90/4.00.
+          Shipping end-to-end computer vision, NLP, and reinforcement learning systems for industrial
+          clients — from research to full-stack delivery and cloud deployment. ICPC Gold Medalist ·
+          Published Researcher · CGPA 3.90/4.00.
         </p>
 
         {/* Key Badges */}
