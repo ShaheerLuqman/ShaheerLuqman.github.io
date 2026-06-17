@@ -62,7 +62,8 @@ export default function Navbar() {
 
         {/* Resume Button */}
         <a
-          href="https://drive.google.com/uc?export=download&id=1zDVswAt8YAlNMjtp9UqqeGmSqsbNM4OM"
+          href="/assets/Shaheer_Resume.pdf"
+          download="Shaheer_Resume.pdf"
           className="hidden lg:inline-flex items-center justify-center gap-2 px-5 py-2.5 min-h-[44px] border border-[#3f63ad] text-[#3f63ad] text-sm font-mono rounded-md hover:bg-[#3f63ad] hover:text-white transition-colors duration-200"
         >
           Resume
@@ -98,7 +99,8 @@ export default function Navbar() {
             ))}
             <li className="pt-2">
               <a
-                href="https://drive.google.com/uc?export=download&id=1zDVswAt8YAlNMjtp9UqqeGmSqsbNM4OM"
+                href="/assets/Shaheer_Resume.pdf"
+                download="Shaheer_Resume.pdf"
                 className="flex min-h-[48px] w-full items-center justify-center rounded-md border border-[#3f63ad] px-5 py-3 text-[#3f63ad] text-sm font-mono hover:bg-[#3f63ad] hover:text-white transition-colors"
               >
                 Resume
