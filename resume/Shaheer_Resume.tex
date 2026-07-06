@@ -10,12 +10,16 @@
 
 \usepackage{amssymb}
 \usepackage{fontspec}
-% Poppins (installed system font). Geometric sans — slightly heavier than Arial.
+% Poppins — loaded by file from the local fonts/ folder so the resume compiles
+% on any machine without a system-wide font install. Geometric sans, slightly
+% heavier than Arial.
 \setmainfont{Poppins}[
-  UprightFont = {Poppins Light},
-  ItalicFont  = {Poppins Light Italic},
-  BoldFont    = {Poppins SemiBold},
-  BoldItalicFont = {Poppins SemiBold Italic},
+  Path = fonts/,
+  Extension = .ttf,
+  UprightFont = Poppins-Light,
+  ItalicFont  = Poppins-LightItalic,
+  BoldFont    = Poppins-SemiBold,
+  BoldItalicFont = Poppins-SemiBoldItalic,
   Scale = 0.90
 ]
 \usepackage[top=1.1cm,bottom=1.1cm,left=1.4cm,right=1.4cm]{geometry}
@@ -215,8 +219,10 @@ software components, and AI-driven anomaly detection to deliver real-time safety
 \entry{BS Computer Science \textnormal{\small— FAST NUCES}}{Sep 2021 -- Jun 2025}%
 {}{CGPA: \textbf{3.90 / 4.00 - Summa Cum Laude Honors}}
 
-\entry{A Levels \textnormal{\small— Generation's School}}{}{}{Grades: A*, 2A}
+\entry{A Levels \textnormal{\small— Generation's School}}{Sep 2019 -- Jun 2021}{}{Grades: A*, 2A}
 % \entry{O Levels \textnormal{\small— Habib Public School}}{}{}{Grades: 4A*, 2A, 3B}
+
+\entry{IELTS Academic \textnormal{\small— English Proficiency}}{Jul 2026}{}{Overall Band: \textbf{7.5 / 9} \textbullet\ Reading \textbf{9.0} \textbullet\ Listening \textbf{8.5}}
 
 
 %------------------------------- Projects ------------------------------------
@@ -237,7 +243,6 @@ Built, sold, and actively maintained for a local business to manage their day-to
   \item Built a cross-platform desktop application with \textbf{Electron}, featuring a modern responsive UI for inventory management workflows.
   \item Integrated \textbf{Supabase} for real-time database operations, authentication, and persistent cloud-backed storage.
   \item Built end-to-end \textbf{order management} with live order tracking via \textbf{courier APIs} and two-way \textbf{Shopify} integration for storefront sync.
-  \item Designed inventory movement and tracking logic to streamline product updates, stock monitoring, and operational workflows.
 \end{tight}
 
 

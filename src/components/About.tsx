@@ -1,7 +1,7 @@
 const highlights = [
   { label: "Company", value: "Retrocausal (US-based)" },
   { label: "Focus", value: "Applied AI & Software Engineering" },
-  { label: "ICPC", value: "Gold Medalist" },
+  { label: "IELTS", value: "7.5 Band Overall — R 9.0 · L 8.5" },
   { label: "CGPA", value: "3.90 / 4.00 — FAST NUCES" },
   { label: "Research", value: "Published — 2× arXiv, IEEE" },
   { label: "Specialization", value: "CV · NLP · Software Engineering" },
