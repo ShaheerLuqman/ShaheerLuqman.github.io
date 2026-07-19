@@ -1,0 +1,229 @@
+% !TEX program = xelatex
+%==============================================================================
+% Muhammad Shaheer Luqman — Resume (research-focused, single column)
+% Theme matched to portfolio: accent blue #3f63ad, heading navy #1a2744,
+% body slate #5a6a8a. Font: Poppins.
+% This variant leads with Research & Publications and is intentionally lighter
+% and less dense than the AI Engineer variant.
+% IMPORTANT: Compile with xelatex (uses local Poppins font via fontspec):
+%   xelatex Shaheer_Resume.tex
+%==============================================================================
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{amssymb}
+\usepackage{fontspec}
+% Poppins — loaded by file from the local fonts/ folder so the resume compiles
+% on any machine without a system-wide font install. Geometric sans, slightly
+% heavier than Arial.
+\setmainfont{Poppins}[
+  Path = fonts/,
+  Extension = .ttf,
+  UprightFont = Poppins-Light,
+  ItalicFont  = Poppins-LightItalic,
+  BoldFont    = Poppins-SemiBold,
+  BoldItalicFont = Poppins-SemiBoldItalic,
+  Scale = 0.90
+]
+% Slightly more generous margins than the dense variant so the page breathes.
+\usepackage[top=1.2cm,bottom=1.2cm,left=1.6cm,right=1.6cm]{geometry}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{parskip}
+\usepackage{etoolbox}
+\usepackage{multicol}
+\setlength{\multicolsep}{2pt}
+\setlength{\columnsep}{1.2em}
+% Roomier paragraph spacing than the dense variant.
+\setlength{\parskip}{3pt plus 1pt minus 1pt}
+
+% Consistent inter-line spacing across the whole document.
+\usepackage{setspace}
+\setstretch{1.02}
+
+%------------------------------- Colors --------------------------------------
+\definecolor{accent}{HTML}{3F63AD}   % portfolio primary blue
+\definecolor{accentdk}{HTML}{2E4A84} % darker blue (hover state)
+\definecolor{heading}{HTML}{1A2744}  % navy headings
+\definecolor{body}{HTML}{4A5878}     % slate body text
+\definecolor{muted}{HTML}{7A89A8}    % muted / dates
+\definecolor{rule}{HTML}{3F63AD}
+\definecolor{chipbg}{HTML}{E8EEF7}   % tech-tag background
+
+%------------------------------- Hyperlinks ----------------------------------
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent,
+  pdftitle={Muhammad Shaheer Luqman — Resume},
+  pdfauthor={Muhammad Shaheer Luqman}
+}
+% Underline + italicize hyperlink text (in addition to the accent color).
+\usepackage[normalem]{ulem}
+\let\orighref\href
+\renewcommand{\href}[2]{\orighref{#1}{\uline{\textit{#2}}}}
+
+%------------------------------- Section style -------------------------------
+\titleformat{\section}
+  {\Large\bfseries\color{heading}}
+  {}{0em}
+  {}[\vspace{2pt}{\color{rule}\titlerule[1.2pt]}]
+\titlespacing*{\section}{0pt}{10pt}{7pt}
+
+% Default body color
+\AtBeginDocument{\color{body}}
+
+%------------------------------- Helper macros -------------------------------
+% Experience / entry header: title (left, bold navy) + date (right, muted)
+% #1 = title, #2 = date, #3 = subtitle (accent italic), #4 = meta (muted small)
+% Pass empty {} for any unused field.
+\newlength{\datew}
+\newcommand{\entryline}[2]{%
+  \noindent
+  \begingroup
+  \settowidth{\datew}{\color{muted}#2}%
+  \parbox[t]{\dimexpr\linewidth-\datew-1em\relax}{\raggedright\bfseries\color{heading}#1}%
+  \hfill
+  \parbox[t]{\datew}{\raggedleft\color{muted}#2}%
+  \par
+  \endgroup
+}
+\newcommand{\subline}[1]{\ifblank{#1}{}{{\color{accent}\itshape #1}\par}}
+\newcommand{\metaline}[1]{\ifblank{#1}{}{{\color{muted}\small #1}\par}}
+% Consistent gap before every entry across all sections.
+\newlength{\entryskip}\setlength{\entryskip}{3pt}
+\newcommand{\entry}[4]{%
+  \par\vspace{-\parskip}\vspace{\entryskip}\vspace{-2pt}%
+  \entryline{#1}{#2}%
+  \subline{#3}%
+  \metaline{#4}%
+}
+% Use right after \section to cancel the leading gap on the first entry.
+\newcommand{\firstentry}{\vspace{2\entryskip}}
+
+% Bullet list tuned tight
+\newlist{tight}{itemize}{1}
+\setlist[tight]{leftmargin=1.2em,itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt,
+  label={\color{accent}\raisebox{0ex}{\normalsize\textbullet}}}
+
+% Tech / skill chip
+\newcommand{\chip}[1]{%
+  \setlength{\fboxsep}{2pt}%
+  \colorbox{chipbg}{\color{accentdk}\small\strut\,#1\,}\hspace{2pt}}
+
+\setlength{\parindent}{0pt}
+
+% Remove page numbers.
+\pagestyle{empty}
+
+%==============================================================================
+\begin{document}
+
+%------------------------------- Header --------------------------------------
+{\fontsize{30}{34}\selectfont\bfseries\color{accent}Muhammad Shaheer Luqman}
+
+\vspace{3pt}
+{\color{body}AI researcher working in reinforcement learning, computer vision, and robot manipulation. Published across arXiv (2$\times$) and IEEE, ICPC Gold Medalist, and summa cum laude graduate (3.90/4.00).}
+
+\vspace{4pt}
+{\color{heading}%
+\faEnvelope[regular]\; \href{mailto:muhammadshaheerluqman@gmail.com}{muhammadshaheerluqman@gmail.com}
+\quad\textbar\quad
+\faMobile*\; \href{tel:+923100124127}{+92 310 0124127}
+\quad\textbar\quad
+\faGithub\; \href{https://github.com/ShaheerLuqman}{/ShaheerLuqman}
+}\\[3pt]
+{\color{heading}%
+\faLinkedin\; \href{http://linkedin.com/in/shaheerluqman}{linkedin.com/in/shaheerluqman}
+\quad\textbar\quad
+\faGlobe\; \href{https://muhammad-shaheer-portfolio.vercel.app/}{muhammad-shaheer-portfolio.vercel.app}
+}
+
+%------------------------- Research & Publications ---------------------------
+\section{Research \& Publications}
+\firstentry
+\entry{Enhancing Human-Likeness in Reinforcement Learning Agents via Hierarchical Macro Action Quantization}{2026}%
+{arXiv:2605.30928}{Under Review}
+A human-like RL framework (HiMAQ) that encodes human demonstrations into a two-level hierarchy of
+macro actions for dexterous humanoid-hand control. On D4RL it improves human-likeness over the
+non-hierarchical baseline while matching or exceeding success rates across IQL, SAC, and RLPD.
+\href{https://arxiv.org/abs/2605.30928}{View on arXiv}
+
+\entry{Unsupervised Skeleton-Based Action Segmentation via Hierarchical Spatiotemporal Vector Quantization}{2026}%
+{arXiv:2604.15196}{Under Review}
+A hierarchical spatiotemporal vector-quantization framework for unsupervised skeleton-based action
+segmentation, achieving state-of-the-art on the HuGaDB, LARa, and BABEL benchmarks.
+\href{https://arxiv.org/abs/2604.15196}{View on arXiv}
+
+\entry{Ensuring Child Safety: An IoT-Based Surveillance System for Remote Monitoring and Detection of Anomalous Behavior}{2024}%
+{\vspace{2pt}ICETST 2024 \textbullet\ IEEE Xplore}{}
+An IoT surveillance system pairing hardware sensors with AI-driven anomaly detection for real-time
+child-safety alerts. \href{https://ieeexplore.ieee.org/document/10737980}{View on IEEE Xplore}
+
+\vspace{5pt}
+{\color{heading}\textbf{Research Interests:}}\ {\color{body}Robot Manipulation, Computer Vision, Reinforcement Learning, Vision-Language Models, IoT + AI Systems}
+
+%------------------------------- Research Experience -------------------------
+\section{Research Experience}
+\firstentry
+\entry{Applied Research Engineer \textnormal{\small— \textbf{\textit{Retrocausal}}}}{Jun 2025 -- Present}%
+{}{US-based \textbullet\ Remote}
+\begin{tight}
+  \item Research on robot manipulation and Vision-Language-Action systems, unsupervised action segmentation, and temporal long-video understanding --- \textbf{two papers submitted} (see above).
+  \item Built and shipped end-to-end AI systems for industrial clients (incl.\ \textbf{BMW}), from model training to GPU deployment on \textbf{AWS} and \textbf{RunPod}.
+\end{tight}
+\vspace{2pt}
+{\footnotesize\chip{Reinforcement Learning}\chip{Robotics}\chip{VLMs}\chip{Computer Vision}\chip{PyTorch}}
+
+\entry{Software Engineer Intern \textnormal{\small— \textbf{\textit{Retrocausal}}}}{Mar 2024 -- Jun 2024}%
+{}{Internship \textbullet\ US-based \textbullet\ Remote}
+\begin{tight}
+  \item Built a video activity-recognition pipeline with \textbf{body pose estimation} and \textbf{vision-language models} for automated industrial workflow analysis.
+  \item Developed \textbf{LLM prompt-engineering} systems for analysis of industrial process data.
+\end{tight}
+\vspace{2pt}
+{\footnotesize\chip{Computer Vision}\chip{VLMs}\chip{LLMs}\chip{MediaPipe}\chip{Python}}
+
+%------------------------------- Education -----------------------------------
+\section{Education}
+\firstentry
+\entry{BS Computer Science \textnormal{\small— FAST NUCES}}{Sep 2021 -- Jun 2025}%
+{}{CGPA: \textbf{3.90 / 4.00 — Summa Cum Laude Honors}}
+
+\entry{A Levels \textnormal{\small— Generation's School}}{Sep 2019 -- Jun 2021}{}{Grades: A*, 2A}
+
+\entry{IELTS Academic \textnormal{\small— English Proficiency}}{Jul 2026}{}{Overall Band: \textbf{7.5 / 9} \textbullet\ Reading \textbf{9.0} \textbullet\ Listening \textbf{8.5}}
+
+%------------------------------- Skills --------------------------------------
+\section{Skills}
+
+\newcommand{\skillrow}[2]{\noindent{\color{heading}\textbf{#1}}\hspace{4pt}{\color{body}#2}\par\vspace{2pt}}
+
+\skillrow{Research Areas}{Reinforcement Learning (IQL, SAC, RLPD); Robot Manipulation; Computer Vision; Vision-Language Models; Action Segmentation.}
+\skillrow{ML Frameworks}{PyTorch, Hugging Face, Scikit-learn; YOLO, MediaPipe; Stable Diffusion; BERT, Whisper.}
+\skillrow{Engineering}{Python, C / C++; Django, FastAPI, Flask; AWS, RunPod; Docker, Git, Linux.}
+
+%------------------------------- Selected Project ----------------------------
+\section{Selected Project}
+\firstentry
+\entry{PixelForge — Generative AI Marketing Platform}{}{Final Year Project (\href{https://github.com/ShaheerLuqman/PixelForge}{GitHub})}{}
+Full-stack generative pipeline combining \textbf{BLIP} captioning, \textbf{Gemini} text generation, and
+diffusion-based image and video synthesis for product-aware marketing content.
+
+\vspace{2pt}
+{\color{body}More on my \href{https://muhammad-shaheer-portfolio.vercel.app/}{portfolio} and \href{https://github.com/ShaheerLuqman}{GitHub}.}
+
+%--------------------------- Honors & Awards ---------------------------------
+\section{Honors \& Awards}
+\begin{tight}
+  \item \textbf{Summa Cum Laude} — 3.90 / 4.00 CGPA, FAST NUCES \textit{(2025)}
+  \item \textbf{ICPC Gold Medalist} — ICPC National Competitive Programming \textit{(Nov 2024)}
+  \item \textbf{ICPC Bronze Medalist} — ICPC National Competitive Programming \textit{(Feb 2024)}
+  \item \textbf{4$\times$ Rector's List} (4.0 GPA) \textbullet\ \textbf{4$\times$ Dean's List} (3.5+ GPA) — FAST NUCES
+\end{tight}
+
+\end{document}
