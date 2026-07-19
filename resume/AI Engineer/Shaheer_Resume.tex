@@ -22,7 +22,7 @@
   BoldItalicFont = Poppins-SemiBoldItalic,
   Scale = 0.90
 ]
-\usepackage[top=1.1cm,bottom=1.1cm,left=1.4cm,right=1.4cm]{geometry}
+\usepackage[top=0.8cm,bottom=0.8cm,left=1.4cm,right=1.4cm]{geometry}
 \usepackage[dvipsnames,table]{xcolor}
 \usepackage{enumitem}
 \usepackage{titlesec}
@@ -71,7 +71,7 @@
   {\Large\bfseries\color{heading}}
   {}{0em}
   {}[\vspace{2pt}{\color{rule}\titlerule[1.2pt]}]
-\titlespacing*{\section}{0pt}{8pt}{6pt}
+\titlespacing*{\section}{0pt}{5pt}{4pt}
 
 % Default body color
 \AtBeginDocument{\color{body}}
@@ -108,6 +108,33 @@
 % Use right after \section to cancel the leading gap on the first entry.
 \newcommand{\firstentry}{\vspace{3\entryskip}}
 
+% Two-row entry header (Education / Experience): institution or company name
+% (left, bold navy) + location (right, italic accent) on row 1; degree or
+% position (left, muted small caps) + date range (right, italic muted) on
+% row 2. #1 = name, #2 = location, #3 = degree/position, #4 = date range.
+\newlength{\entrylocw}
+\newcommand{\entrytoprow}[2]{%
+  \noindent\begingroup
+  \settowidth{\entrylocw}{\itshape #2}%
+  \parbox[t]{\dimexpr\linewidth-\entrylocw-1em\relax}{\raggedright\bfseries\color{heading}#1}%
+  \hfill
+  \parbox[t]{\entrylocw}{\raggedleft\itshape\color{accent}#2}%
+  \par\endgroup
+}
+\newcommand{\entrysubrow}[2]{%
+  \noindent\begingroup
+  \settowidth{\datew}{\itshape\small #2}%
+  \parbox[t]{\dimexpr\linewidth-\datew-1em\relax}{\raggedright\small\color{muted}\MakeUppercase{#1}}%
+  \hfill
+  \parbox[t]{\datew}{\raggedleft\itshape\small\color{muted}#2}%
+  \par\endgroup
+}
+\newcommand{\gridentry}[4]{%
+  \par\vspace{-\parskip}\vspace{\entryskip}\vspace{-3pt}%
+  \entrytoprow{#1}{#2}%
+  \entrysubrow{#3}{#4}%
+}
+
 % Bullet list tuned tight
 \newlist{tight}{itemize}{1}
 \setlist[tight]{leftmargin=1.2em,itemsep=0.5pt,topsep=1pt,parsep=0pt,partopsep=0pt,
@@ -128,31 +155,25 @@
 \begin{document}
 
 %------------------------------- Header --------------------------------------
-{\fontsize{30}{34}\selectfont\bfseries\color{accent}Muhammad Shaheer Luqman}
+\begin{center}
+{\fontsize{26}{30}\selectfont\bfseries\color{accent}Muhammad Shaheer Luqman}\\[5pt]
+{\footnotesize\color{heading}
+\faEnvelope[regular]\,\href{mailto:muhammadshaheerluqman@gmail.com}{muhammadshaheerluqman@gmail.com}
+~\textbar~\faHome\,\href{https://shaheerluqman.github.io/}{shaheerluqman.github.io}
+~\textbar~\faGithub\,\href{https://github.com/ShaheerLuqman}{ShaheerLuqman}
+~\textbar~\faLinkedin\,\href{http://linkedin.com/in/shaheerluqman}{shaheerluqman}
+~\textbar~\faGraduationCap\,\href{https://scholar.google.com/citations?user=I3TSLaAAAAAJ&hl=en}{M. S. Luqman}
+}
+\end{center}
 
 \vspace{2pt}
 {\color{body}Applied AI \& Software Engineer who ships end-to-end computer vision, NLP, and reinforcement learning systems for industrial clients --- from research to full-stack delivery and cloud deployment. Published researcher (2$\times$ arXiv, IEEE), ICPC Gold Medalist, and summa cum laude graduate with a 3.90/4.00 CGPA.}
-
-\vspace{2pt}
-{\color{heading}%
-\faEnvelope[regular]\; Email: \href{mailto:muhammadshaheerluqman@gmail.com}{muhammadshaheerluqman@gmail.com}
-\quad\textbar\quad
-\faMobile*\; Phone: \href{tel:+923100124127}{+92 310 0124127}
-\quad\textbar\quad
-\faGithub\; GitHub: \href{https://github.com/ShaheerLuqman}{/ShaheerLuqman}
-}\\[3pt]
-{\color{heading}%
-\faLinkedin\; LinkedIn: \href{http://linkedin.com/in/shaheerluqman}{linkedin.com/in/shaheerluqman}
-\quad\textbar\quad
-\faGlobe\; Portfolio: \href{https://shaheerluqman.github.io/}{shaheerluqman.github.io}
-}
 
 
 %------------------------------- Experience ----------------------------------
 \section{Experience}
 \firstentry
-\entry{Applied Research Engineer \textnormal{\small— \textbf{\textit{Retrocausal}}}}{Jun 2025 -- Present}%
-{}{US-based \textbullet\ Remote}
+\gridentry{Retrocausal}{Remote (US-based)}{Applied Research Engineer}{Jun 2025 -- Present}
 Building \textbf{AI systems} for industrial clients end-to-end, contributing to in-house frontend/backend
 software, and researching robot manipulation and Vision-Language-Action systems.
 \begin{tight}
@@ -164,8 +185,7 @@ software, and researching robot manipulation and Vision-Language-Action systems.
 \vspace{2pt}
 {\footnotesize\chip{Python}\chip{PyTorch}\chip{Computer Vision}\chip{VLMs}\chip{Full-Stack}\chip{Vue.js}\chip{Django}\chip{AWS}\chip{RunPod}\chip{Reinforcement Learning}\chip{Robotics}}
 
-\entry{Management Trainee Officer (MTO) — AI/NLP \textnormal{\small— \textbf{\textit{Confinality}}}}{Jul 2025 -- Sep 2025}%
-{}{Internship \textbullet\ Evening Shift \textbullet\ Remote}
+\gridentry{Confinality}{Internship, Remote (Evening)}{Management Trainee Officer (MTO) — AI/NLP}{Jul 2025 -- Sep 2025}
 Selected for the \textbf{MTO} trainee program, working on \textbf{NLP and speech-focused AI} workflows.
 \begin{tight}
   \item Engineered \textbf{NLP} pipelines for \textbf{sentiment analysis, speech detection, and transcription}.
@@ -176,8 +196,7 @@ Selected for the \textbf{MTO} trainee program, working on \textbf{NLP and speech
 \vspace{2pt}
 {\footnotesize\chip{NLP}\chip{Voice Generation}\chip{Sentiment Analysis}\chip{Speech Detection}\chip{Transcription}\chip{AI Calling Agents}}
 
-\entry{Software Engineer Intern \textnormal{\small— \textbf{\textit{Retrocausal}}}}{Mar 2024 -- Jun 2024}%
-{}{Internship \textbullet\ US-based \textbullet\ Remote}
+\gridentry{Retrocausal}{Internship, Remote (US-based)}{Software Engineer Intern}{Mar 2024 -- Jun 2024}
 Worked on \textbf{industrial-scale AI systems} across computer vision, NLP, and LLM workflows.
 \begin{tight}
   \item Built a video activity recognition pipeline using \textbf{Body Pose Estimation} and \textbf{Vision-Language Models} to automate PMTS code generation for industrial workflow optimization.
@@ -216,14 +235,11 @@ software components, and AI-driven anomaly detection to deliver real-time safety
 %------------------------------- Education -----------------------------------
 \section{Education}
 \firstentry
-\entry{BS Computer Science \textnormal{\small— FAST NUCES}}{Sep 2021 -- Jun 2025}%
-{}{CGPA: \textbf{3.90 / 4.00 - Summa Cum Laude Honors}}
-
-\entry{A Levels \textnormal{\small— Generation's School}}{Sep 2019 -- Jun 2021}{}{Grades: A*, 2A}
-% \entry{O Levels \textnormal{\small— Habib Public School}}{}{}{Grades: 4A*, 2A, 3B}
-
-\entry{IELTS Academic \textnormal{\small— English Proficiency}}{Jul 2026}{}{Overall Band: \textbf{7.5 / 9} \textbullet\ Reading \textbf{9.0} \textbullet\ Listening \textbf{8.5}}
-
+\gridentry{National University of Computer and Emerging Sciences (FAST)}{Karachi, Pakistan}{BS Computer Science}{Sep 2021 -- Jun 2025}
+\begin{tight}
+  \item CGPA: \textbf{3.90 / 4.00} (Ranked \textbf{9 / 440})
+  \item Summa Cum Laude Honors
+\end{tight}
 
 %------------------------------- Projects ------------------------------------
 \section{Projects}
@@ -264,12 +280,12 @@ Built, sold, and actively maintained for a local business to manage their day-to
 \section{Honors \& Awards}
 \begin{tight}
   \item \textbf{ICPC Gold Medalist} — ICPC National Competitive Programming \textit{(Nov 2024)}
-  \item \textbf{Summa Cum Laude} — Graduated with a high GPA (3.90 / 4.00), FAST NUCES \textit{(2025)}
+  \item \textbf{Summa Cum Laude} — Graduated with a high GPA (3.90 / 4.00), National University of Computer and Emerging Sciences (FAST) \textit{(2025)}
   \item \textbf{ICPC Bronze Medalist} — ICPC National Competitive Programming \textit{(Feb 2024)}
   \item \textbf{Winner} — Code Sprint, PROCOM 2023 \textit{(2023)}
   \item \textbf{Best Team Award} — Coder's Cup, ACM FAST
-  \item \textbf{4x Rector's List (4.0 GPA)} — FAST NUCES, 4 semesters
-  \item \textbf{4x Dean's List (3.5+ GPA)} — FAST NUCES, 4 semesters
+  \item \textbf{4x Rector's List (4.0 GPA)} — NUCES (FAST), 4 semesters
+  \item \textbf{4x Dean's List (3.5+ GPA)} — NUCES (FAST), 4 semesters
 \end{tight}
 
 %----------------------- Leadership & Volunteer ------------------------------
@@ -281,5 +297,10 @@ Built, sold, and actively maintained for a local business to manage their day-to
   \item \textbf{CS Competition Co-Head} — PROCOM'24
   \item \textbf{Training \& Mentorship Head} — ACM NUCES
 \end{tight}
+
+%------------------------------- Certifications -------------------------------
+\section{Certifications}
+\firstentry
+\entry{IELTS Academic \textnormal{\small— English Proficiency}}{Jul 2026}{}{Overall Band: \textbf{7.5 / 9} \textbullet\ Reading \textbf{9.0} \textbullet\ Listening \textbf{8.5}}
 
 \end{document}

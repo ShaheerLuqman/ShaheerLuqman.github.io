@@ -94,20 +94,70 @@
 }
 \newcommand{\subline}[1]{\ifblank{#1}{}{{\color{accent}\itshape #1}\par}}
 \newcommand{\metaline}[1]{\ifblank{#1}{}{{\color{muted}\small #1}\par}}
+
+% Publication entry: single row, two columns. Left column = paper title
+% (wraps freely). Right column = status/venue (e.g. "Under Review",
+% "ICETST 2024") stacked directly above the journal/arXiv reference, both
+% right-aligned within the same box so they read as one unit. Colors match
+% the Education/Experience \gridentry pattern: top line accent blue (like
+% location), bottom line muted gray (like date).
+% #1 = title, #2 = status/venue, #3 = journal/arXiv reference.
+\newlength{\pubw}
+\newcommand{\pubentryline}[3]{%
+  \noindent\begingroup
+  \settowidth{\datew}{\itshape#2}%
+  \settowidth{\pubw}{\itshape\small #3}%
+  \ifdim\pubw>\datew \setlength{\datew}{\pubw}\fi
+  \parbox[t]{\dimexpr\linewidth-\datew-1em\relax}{\raggedright\bfseries\color{heading}#1}%
+  \hfill
+  \parbox[t]{\datew}{\raggedleft\itshape\color{accent}#2\\[2pt]{\itshape\small\color{muted}#3}}%
+  \par
+  \endgroup
+}
+\newcommand{\pubentry}[3]{%
+  \par\vspace{-\parskip}\vspace{\entryskip}\vspace{-2pt}%
+  \pubentryline{#1}{#2}{#3}%
+}
 % Consistent gap before every entry across all sections.
-\newlength{\entryskip}\setlength{\entryskip}{3pt}
+\newlength{\entryskip}\setlength{\entryskip}{10pt}
 \newcommand{\entry}[4]{%
   \par\vspace{-\parskip}\vspace{\entryskip}\vspace{-2pt}%
   \entryline{#1}{#2}%
   \subline{#3}%
   \metaline{#4}%
 }
-% Use right after \section to cancel the leading gap on the first entry.
-\newcommand{\firstentry}{\vspace{2\entryskip}}
+% Use right after \section to cancel the leading gap on the first entry, so
+% the heading-to-first-item spacing comes only from \titlespacing's "after"
+% value, not from \entryskip (which controls spacing between later entries).
+\newcommand{\firstentry}{\vspace{\parskip}\vspace{-\entryskip}\vspace{2pt}}
+
+% Two-line entry header (Education / Experience): single row, two columns,
+% each holding two stacked lines joined with the same explicit \\[2pt] gap
+% used by \pubentryline, so the line-to-line spacing matches exactly.
+% Left column: institution/company (bold navy) above degree/position (muted
+% small caps). Right column: location (italic accent) above date range
+% (italic muted small). #1 = name, #2 = location, #3 = degree/position,
+% #4 = date range.
+\newlength{\entrylocw}
+\newcommand{\gridentryline}[4]{%
+  \noindent\begingroup
+  \settowidth{\entrylocw}{\itshape #2}%
+  \settowidth{\datew}{\itshape\small #4}%
+  \ifdim\datew>\entrylocw \setlength{\entrylocw}{\datew}\fi
+  \parbox[t]{\dimexpr\linewidth-\entrylocw-1em\relax}{\raggedright\bfseries\color{heading}#1\\[2pt]{\small\color{muted}\MakeUppercase{#3}}}%
+  \hfill
+  \parbox[t]{\entrylocw}{\raggedleft\itshape\color{accent}#2\\[2pt]{\itshape\small\color{muted}#4}}%
+  \par
+  \endgroup
+}
+\newcommand{\gridentry}[4]{%
+  \par\vspace{-\parskip}\vspace{\entryskip}\vspace{-2pt}%
+  \gridentryline{#1}{#2}{#3}{#4}%
+}
 
 % Bullet list tuned tight
 \newlist{tight}{itemize}{1}
-\setlist[tight]{leftmargin=1.2em,itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt,
+\setlist[tight]{leftmargin=1.2em,itemsep=4pt,topsep=2pt,parsep=0pt,partopsep=0pt,
   label={\color{accent}\raisebox{0ex}{\normalsize\textbullet}}}
 
 % Tech / skill chip
@@ -124,95 +174,113 @@
 \begin{document}
 
 %------------------------------- Header --------------------------------------
-{\fontsize{30}{34}\selectfont\bfseries\color{accent}Muhammad Shaheer Luqman}
+\begin{center}
+{\fontsize{26}{30}\selectfont\bfseries\color{accent}Muhammad Shaheer Luqman}\\[5pt]
+{\footnotesize\color{heading}
+\faEnvelope[regular]\,\href{mailto:muhammadshaheerluqman@gmail.com}{muhammadshaheerluqman@gmail.com}
+~\textbar~\faHome\,\href{https://shaheerluqman.github.io/}{shaheerluqman.github.io}
+~\textbar~\faGithub\,\href{https://github.com/ShaheerLuqman}{ShaheerLuqman}
+~\textbar~\faLinkedin\,\href{http://linkedin.com/in/shaheerluqman}{shaheerluqman}
+~\textbar~\faGraduationCap\,\href{https://scholar.google.com/citations?user=I3TSLaAAAAAJ&hl=en}{M. S. Luqman}
+}
+\end{center}
 
 \vspace{3pt}
 {\color{body}AI researcher working in reinforcement learning, computer vision, and robot manipulation. Published across arXiv (2$\times$) and IEEE, ICPC Gold Medalist, and summa cum laude graduate (3.90/4.00).}
 
-\vspace{4pt}
-{\color{heading}%
-\faEnvelope[regular]\; \href{mailto:muhammadshaheerluqman@gmail.com}{muhammadshaheerluqman@gmail.com}
-\quad\textbar\quad
-\faMobile*\; \href{tel:+923100124127}{+92 310 0124127}
-\quad\textbar\quad
-\faGithub\; \href{https://github.com/ShaheerLuqman}{/ShaheerLuqman}
-}\\[3pt]
-{\color{heading}%
-\faLinkedin\; \href{http://linkedin.com/in/shaheerluqman}{linkedin.com/in/shaheerluqman}
-\quad\textbar\quad
-\faGlobe\; \href{https://shaheerluqman.github.io/}{shaheerluqman.github.io}
-}
-
-%------------------------- Research & Publications ---------------------------
-\section{Research \& Publications}
+%------------------------------- Education -----------------------------------
+\section{Education}
 \firstentry
-\entry{Enhancing Human-Likeness in Reinforcement Learning Agents via Hierarchical Macro Action Quantization}{2026}%
-{arXiv:2605.30928}{Under Review}
-A human-like RL framework (HiMAQ) that encodes human demonstrations into a two-level hierarchy of
-macro actions for dexterous humanoid-hand control. On D4RL it improves human-likeness over the
-non-hierarchical baseline while matching or exceeding success rates across IQL, SAC, and RLPD.
-\href{https://arxiv.org/abs/2605.30928}{View on arXiv}
-
-\entry{Unsupervised Skeleton-Based Action Segmentation via Hierarchical Spatiotemporal Vector Quantization}{2026}%
-{arXiv:2604.15196}{Under Review}
-A hierarchical spatiotemporal vector-quantization framework for unsupervised skeleton-based action
-segmentation, achieving state-of-the-art on the HuGaDB, LARa, and BABEL benchmarks.
-\href{https://arxiv.org/abs/2604.15196}{View on arXiv}
-
-\entry{Ensuring Child Safety: An IoT-Based Surveillance System for Remote Monitoring and Detection of Anomalous Behavior}{2024}%
-{\vspace{2pt}ICETST 2024 \textbullet\ IEEE Xplore}{}
-An IoT surveillance system pairing hardware sensors with AI-driven anomaly detection for real-time
-child-safety alerts. \href{https://ieeexplore.ieee.org/document/10737980}{View on IEEE Xplore}
-
-\vspace{5pt}
-{\color{heading}\textbf{Research Interests:}}\ {\color{body}Robot Manipulation, Computer Vision, Reinforcement Learning, Vision-Language Models, IoT + AI Systems}
+\gridentry{National University of Computer and Emerging Sciences (FAST)}{Karachi, Pakistan}{BS Computer Science}{Sep 2021 -- Jun 2025}
+\begin{tight}
+  \item CGPA: \textbf{3.90 / 4.00} (Ranked \textbf{9 / 440})
+  \item Summa Cum Laude Honors
+\end{tight}
 
 %------------------------------- Research Experience -------------------------
-\section{Research Experience}
+\section{Experience}
 \firstentry
-\entry{Applied Research Engineer \textnormal{\small— \textbf{\textit{Retrocausal}}}}{Jun 2025 -- Present}%
-{}{US-based \textbullet\ Remote}
+\gridentry{Retrocausal}{Remote (US-based)}{Applied Research Engineer}{Jun 2025 -- Present}
+\vspace{3pt}
 \begin{tight}
-  \item Research on robot manipulation and Vision-Language-Action systems, unsupervised action segmentation, and temporal long-video understanding --- \textbf{two papers submitted} (see above).
+  \item Research on robot manipulation and Vision-Language-Action systems, unsupervised action segmentation, and temporal long-video understanding --- \textbf{two papers submitted} (see \textit{Research \& Publications}).
   \item Built and shipped end-to-end AI systems for industrial clients (incl.\ \textbf{BMW}), from model training to GPU deployment on \textbf{AWS} and \textbf{RunPod}.
 \end{tight}
-\vspace{2pt}
+\vspace{3pt}
 {\footnotesize\chip{Reinforcement Learning}\chip{Robotics}\chip{VLMs}\chip{Computer Vision}\chip{PyTorch}}
 
-\entry{Software Engineer Intern \textnormal{\small— \textbf{\textit{Retrocausal}}}}{Mar 2024 -- Jun 2024}%
-{}{Internship \textbullet\ US-based \textbullet\ Remote}
+\gridentry{Retrocausal}{Remote (US-based)}{Software Engineer Intern}{Mar 2024 -- Jun 2024}
+\vspace{3pt}
 \begin{tight}
   \item Built a video activity-recognition pipeline with \textbf{body pose estimation} and \textbf{vision-language models} for automated industrial workflow analysis.
   \item Developed \textbf{LLM prompt-engineering} systems for analysis of industrial process data.
 \end{tight}
-\vspace{2pt}
+\vspace{3pt}
 {\footnotesize\chip{Computer Vision}\chip{VLMs}\chip{LLMs}\chip{MediaPipe}\chip{Python}}
 
-%------------------------------- Education -----------------------------------
-\section{Education}
+%------------------------- Research & Publications ---------------------------
+\section{Research \& Publications}
 \firstentry
-\entry{BS Computer Science \textnormal{\small— FAST NUCES}}{Sep 2021 -- Jun 2025}%
-{}{CGPA: \textbf{3.90 / 4.00 — Summa Cum Laude Honors}}
+\pubentry{Enhancing Human-Likeness in Reinforcement Learning Agents via Hierarchical Macro Action Quantization}{Under Review}{arXiv:2605.30928}
+\vspace{3pt}
 
-\entry{A Levels \textnormal{\small— Generation's School}}{Sep 2019 -- Jun 2021}{}{Grades: A*, 2A}
+A human-like RL framework (HiMAQ) that encodes human demonstrations into a two-level hierarchy of
+macro actions for dexterous humanoid-hand control. On D4RL it improves human-likeness over the
+non-hierarchical baseline while matching or exceeding success rates across IQL, SAC, and RLPD.
+\href{https://arxiv.org/abs/2605.30928}{View on arXiv}
+\vspace{3pt}
 
+{\footnotesize\chip{Robot Manipulation}\chip{Hierarchical Action Quantization}\chip{Reinforcement Learning}\chip{Imitation Learning}}
+
+\pubentry{Unsupervised Skeleton-Based Action Segmentation via Hierarchical Spatiotemporal Vector Quantization}{Under Review}{arXiv:2604.15196}
+\vspace{3pt}
+
+A hierarchical spatiotemporal vector-quantization framework for unsupervised skeleton-based action
+segmentation, achieving state-of-the-art on the HuGaDB, LARa, and BABEL benchmarks.
+\href{https://arxiv.org/abs/2604.15196}{View on arXiv}
+\vspace{3pt}
+
+{\footnotesize\chip{Unsupervised Learning}\chip{Action Segmentation}\chip{Vector Quantization}\chip{Skeleton-Based Recognition}}
+
+\pubentry{Ensuring Child Safety: An IoT-Based Surveillance System for Remote Monitoring and Detection of Anomalous Behavior}{ICETST 2024}{IEEE Xplore}
+\vspace{3pt}
+
+An IoT surveillance system pairing hardware sensors with AI-driven anomaly detection for real-time
+child-safety alerts. \href{https://ieeexplore.ieee.org/document/10737980}{View on IEEE Xplore}
+\vspace{3pt}
+
+{\footnotesize\chip{IoT Systems}\chip{Anomaly Detection}\chip{Surveillance}\chip{Embedded Systems}}
+
+\vspace{10pt}
+{\color{heading}\textbf{Research Interests:}}\ {\color{body}Robot Manipulation, Computer Vision, Reinforcement Learning, Vision-Language Models, IoT + AI Systems}
+
+%------------------------------- Certifications -------------------------------
+\section{Certifications}
+\firstentry
 \entry{IELTS Academic \textnormal{\small— English Proficiency}}{Jul 2026}{}{Overall Band: \textbf{7.5 / 9} \textbullet\ Reading \textbf{9.0} \textbullet\ Listening \textbf{8.5}}
 
-%------------------------------- Skills --------------------------------------
-\section{Skills}
+%--------------------------- Technical Skills ---------------------------------
+\section{Technical Skills}
 
-\newcommand{\skillrow}[2]{\noindent{\color{heading}\textbf{#1}}\hspace{4pt}{\color{body}#2}\par\vspace{2pt}}
+\newcommand{\skillrow}[2]{\noindent{\color{heading}\textbf{#1}}\hspace{4pt}{\color{body}#2}\par\vspace{4pt}}
 
-\skillrow{Research Areas}{Reinforcement Learning (IQL, SAC, RLPD); Robot Manipulation; Computer Vision; Vision-Language Models; Action Segmentation.}
+\skillrow{Languages}{Python, C / C++, JavaScript.}
 \skillrow{ML Frameworks}{PyTorch, Hugging Face, Scikit-learn; YOLO, MediaPipe; Stable Diffusion; BERT, Whisper.}
-\skillrow{Engineering}{Python, C / C++; Django, FastAPI, Flask; AWS, RunPod; Docker, Git, Linux.}
+\skillrow{Software Frameworks}{Django, FastAPI, Flask; Express.js, React, Next.js, Vue.}
+\skillrow{Developer Tools}{AWS, RunPod; Docker, Git, Linux.}
 
-%------------------------------- Selected Project ----------------------------
-\section{Selected Project}
+%------------------------------- Selected Projects ----------------------------
+\section{Projects}
 \firstentry
 \entry{PixelForge — Generative AI Marketing Platform}{}{Final Year Project (\href{https://github.com/ShaheerLuqman/PixelForge}{GitHub})}{}
 Full-stack generative pipeline combining \textbf{BLIP} captioning, \textbf{Gemini} text generation, and
 diffusion-based image and video synthesis for product-aware marketing content.
+
+\entry{LushWear — Business Operation Management}{}{Client (\href{https://github.com/ShaheerLuqman/LushWear-IMS}{GitHub})}{}
+\textbf{Production-ready system, built, sold, and actively maintained} for a local business to run its
+day-to-day operations. Full-stack inventory, order, and storefront management with a \textbf{FastAPI}
+backend, \textbf{Electron} desktop app, \textbf{Supabase} real-time database, and two-way \textbf{Shopify}
+integration.
 
 \vspace{2pt}
 {\color{body}More on my \href{https://shaheerluqman.github.io/}{portfolio} and \href{https://github.com/ShaheerLuqman}{GitHub}.}
@@ -220,10 +288,13 @@ diffusion-based image and video synthesis for product-aware marketing content.
 %--------------------------- Honors & Awards ---------------------------------
 \section{Honors \& Awards}
 \begin{tight}
-  \item \textbf{Summa Cum Laude} — 3.90 / 4.00 CGPA, FAST NUCES \textit{(2025)}
   \item \textbf{ICPC Gold Medalist} — ICPC National Competitive Programming \textit{(Nov 2024)}
+  \item \textbf{Summa Cum Laude} — Graduated with a high GPA (3.90 / 4.00), National University of Computer and Emerging Sciences (FAST) \textit{(2025)}
   \item \textbf{ICPC Bronze Medalist} — ICPC National Competitive Programming \textit{(Feb 2024)}
-  \item \textbf{4$\times$ Rector's List} (4.0 GPA) \textbullet\ \textbf{4$\times$ Dean's List} (3.5+ GPA) — FAST NUCES
+  \item \textbf{Winner} — Code Sprint, PROCOM 2023 \textit{(2023)}
+  \item \textbf{Best Team Award} — Coder's Cup, ACM FAST
+  \item \textbf{4x Rector's List (4.0 GPA)} — NUCES (FAST), 4 semesters
+  \item \textbf{4x Dean's List (3.5+ GPA)} — NUCES (FAST), 4 semesters
 \end{tight}
 
 \end{document}
