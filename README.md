@@ -1,35 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Muhammad Shaheer Luqman — Portfolio
+
+Personal portfolio site, built with Next.js and Tailwind CSS. Live at [shaheerluqman.github.io](https://shaheerluqman.github.io/).
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org) (App Router, static export) + React 19
+- TypeScript
+- Tailwind CSS 4
+- [react-photo-view](https://github.com/MinJieLiu/react-photo-view) for the project gallery lightbox
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view it locally. Pages auto-reload as you edit files under `src/`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font).
+Single-page layout composed of section components in [`src/components`](src/components):
 
-## Learn More
+`Navbar` · `Hero` · `About` · `Experience` · `Research` · `Education` · `Projects` · `Skills` · `Awards` · `Contact` · `Footer`
 
-To learn more about Next.js, take a look at the following resources:
+Assembled in [`src/app/page.tsx`](src/app/page.tsx).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Resume
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+LaTeX source and compiled PDFs live under [`resume/`](resume), split by target role:
 
-## Deploy on GitHub Pages
+- [`resume/AI Engineer`](resume/AI%20Engineer) — applied AI / software engineering
+- [`resume/AI Researcher`](resume/AI%20Researcher) — research-focused
 
-This site is a static export (`next.config.ts` sets `output: "export"`) deployed via the GitHub Actions workflow in [`.github/workflows/nextjs.yml`](.github/workflows/nextjs.yml). Pushing to `main` triggers a build and publishes the `out/` directory to GitHub Pages.
+Compile with `xelatex Shaheer_Resume.tex` from either folder (requires the bundled `fonts/`).
+
+## Deployment
+
+The site is a static export (`next.config.ts` sets `output: "export"`) deployed to GitHub Pages via the GitHub Actions workflow in [`.github/workflows/nextjs.yml`](.github/workflows/nextjs.yml). Every push to `main` builds and publishes the `out/` directory automatically.
